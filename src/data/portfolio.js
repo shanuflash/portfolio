@@ -249,10 +249,10 @@ export const infoItems = [
     icon: 'Mail',
     content: (
       <a
-        href="mailto:shanuflash@gmail.com"
+        href="mailto:hello@shanu.dev"
         className="text-sm text-foreground hover:underline"
       >
-        shanuflash@gmail.com
+        hello@shanu.dev
       </a>
     )
   },
