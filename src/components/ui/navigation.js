@@ -2,7 +2,7 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/", text: "Home", underline: true },
-    { href: "#products", text: "Tools", underline: false },
+    // { href: "#products", text: "Tools", underline: false },
     { href: "#about", text: "About", underline: false }
   ];
 

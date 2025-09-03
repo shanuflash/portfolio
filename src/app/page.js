@@ -9,12 +9,10 @@ export default function Home() {
   return (
     <div className="min-h-screen font-mono bg-background">
       <Navigation />
-      <div className="flex justify-center ">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto flex flex-col justify-center w-full h-20 sm:h-40 items-center">
-          <div className="flex justify-center">
-            <div className="h-32 w-32 rounded-full bg-muted/30 flex items-center justify-center">
-              <User className="h-16 w-16 text-foreground" />
-            </div>
+      <div className="flex justify-center">
+        <div className="max-w-2xl border-x border-gray-200 mx-auto py-6 w-full">
+          <div className="text-center font-mono text-xs text-muted-foreground/50">
+            01001000 01000101 01001100 01001100 01001111
           </div>
         </div>
       </div>
@@ -22,8 +20,12 @@ export default function Home() {
         <div className="max-w-2xl border-x border-gray-200 mx-auto">
           <div className="flex  items-center gap-4 p-0">
             <div className="flex border-r h-full justify-center items-center p-1 border-gray-200">
-              <div className="w-20 h-20 rounded-full bg-foreground flex items-center justify-center">
-                <User className="h-12 w-12 text-background" />
+              <div className="w-20 h-20 rounded-full bg-foreground flex items-center justify-center overflow-hidden">
+                <img
+                  src="/profile-bw.png"
+                  alt="Shanu Sivakumar"
+                  className="w-20 h-20 object-cover rounded-full"
+                />
               </div>
             </div>
             <div className="flex-1">
@@ -66,8 +68,9 @@ export default function Home() {
         </div>
       </div>
       <DiagonalDivider />
+      {/* Work in progress...
       <ExpandableProductsSection products={products} />
-      <DiagonalDivider />
+      <DiagonalDivider /> */}
       <div
         id="about"
         className="border-b border-border border-gray-200 bg-background"
@@ -124,7 +127,7 @@ export default function Home() {
                 >
                   {getIcon(
                     social.icon,
-                    'h-7 w-7 text-foreground hover:text-muted-foreground transition-colors'
+                    'h-5 w-5 text-foreground hover:text-muted-foreground transition-colors'
                   )}
                 </a>
               ))}
