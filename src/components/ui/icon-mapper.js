@@ -1,11 +1,4 @@
 import {
-  Type, FileText, Hash, Link, Binary, Braces, Palette,
-  Shuffle, Shield, QrCode, Dice1, Calculator, Clock,
-  ImageIcon, DollarSign, Calendar, FileImage, GitCompare, BarChart3,
-  Github, Twitter, Linkedin, Code, User, Mail
-} from 'lucide-react';
-
-const iconMap = {
   Type,
   FileText,
   Hash,
@@ -16,7 +9,7 @@ const iconMap = {
   Shuffle,
   Shield,
   QrCode,
-  Dice1,
+  Dice5,
   Calculator,
   Clock,
   ImageIcon,
@@ -30,10 +23,38 @@ const iconMap = {
   Linkedin,
   Code,
   User,
-  Mail
+  Mail,
+} from 'lucide-react';
+
+const iconMap = {
+  Type,
+  FileText,
+  Hash,
+  Link,
+  Binary,
+  Braces,
+  Palette,
+  Shuffle,
+  Shield,
+  QrCode,
+  Dice5,
+  Calculator,
+  Clock,
+  ImageIcon,
+  DollarSign,
+  Calendar,
+  FileImage,
+  GitCompare,
+  BarChart3,
+  Github,
+  Twitter,
+  Linkedin,
+  Code,
+  User,
+  Mail,
 };
 
-export function getIcon(iconName, className = "") {
+export function getIcon(iconName, className = '') {
   const IconComponent = iconMap[iconName];
   if (!IconComponent) {
     console.warn(`Icon "${iconName}" not found in iconMap`);

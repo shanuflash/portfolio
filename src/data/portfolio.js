@@ -1,4 +1,36 @@
 export const products = [
+  // Time & Date Tools
+  {
+    href: "https://github.com/shanuflash",
+    icon: 'Clock',
+    name: "CountDown Pro",
+    status: "Live",
+    category: "Time Tools",
+    description: "Calculate how long until any future date/time with precision countdown",
+    isExternal: true,
+    gridPosition: "border-b md:border-b-0 md:border-r border-border border-gray-200"
+  },
+  {
+    href: "https://github.com/shanuflash",
+    icon: 'Calendar',
+    name: "TimeStamp Converter",
+    status: "Live",
+    category: "Time Tools",
+    description: "Convert between Unix timestamps and human-readable dates instantly",
+    isExternal: true,
+    gridPosition: "border-b md:border-b-0 md:border-r border-border border-gray-200"
+  },
+  {
+    href: "https://github.com/shanuflash",
+    icon: 'Timer',
+    name: "Duration Calculator",
+    status: "Live",
+    category: "Time Tools",
+    description: "Calculate time elapsed between dates with detailed breakdown",
+    isExternal: true,
+    gridPosition: "border-b md:border-b-0 border-border border-gray-200"
+  },
+  
   // Text Tools
   {
     href: "https://github.com/shanuflash",

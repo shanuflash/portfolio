@@ -1,22 +1,15 @@
-import { User, ArrowRight } from 'lucide-react';
 import Navigation from '../components/ui/navigation';
 import DiagonalDivider from '../components/ui/diagonal-divider';
-import ExpandableProductsSection from '../components/sections/expandable-products-section';
-import { products, socialLinks, infoItems } from '../data/portfolio';
+import BinaryTitle from '../components/ui/binary-title';
+import { socialLinks, infoItems } from '../data/portfolio';
 import { getIcon } from '../components/ui/icon-mapper';
 
 export default function Home() {
   return (
     <div className="min-h-screen font-mono bg-background">
-      <Navigation />
-      <div className="flex justify-center">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto py-6 w-full">
-          <div className="text-center font-mono text-xs text-muted-foreground/50">
-            01001000 01000101 01001100 01001100 01001111
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-b border-border border-gray-200 bg-background">
+      <Navigation currentPage="home" />
+      <BinaryTitle word="Home" />
+      <div className="border-t border-b border-gray-200 bg-background">
         <div className="max-w-2xl border-x border-gray-200 mx-auto">
           <div className="flex  items-center gap-4 p-0">
             <div className="flex border-r h-full justify-center items-center p-1 border-gray-200">
@@ -42,7 +35,7 @@ export default function Home() {
         </div>
       </div>
       <DiagonalDivider />
-      <div className="border-b border-border border-gray-200 bg-background">
+      <div className="border-b border-gray-200 bg-background">
         <div className="max-w-2xl border-x border-gray-200 mx-auto">
           <div className="space-y-4 p-6">
             {infoItems.map((item) => {
@@ -68,13 +61,7 @@ export default function Home() {
         </div>
       </div>
       <DiagonalDivider />
-      {/* Work in progress...
-      <ExpandableProductsSection products={products} />
-      <DiagonalDivider /> */}
-      <div
-        id="about"
-        className="border-b border-border border-gray-200 bg-background"
-      >
+      <div id="about" className="border-b border-gray-200 bg-background">
         <div className="max-w-2xl border-x border-gray-200 mx-auto">
           <div className="p-6">
             <h2 className="text-lg font-semibold text-foreground mb-4">
@@ -82,22 +69,22 @@ export default function Home() {
             </h2>
             <div className="space-y-4 text-sm text-foreground leading-relaxed">
               <p>
-                I'm a Frontend Developer at SurveySparrow with expertise in
+                I&apos;m a Frontend Developer at SurveySparrow with expertise in
                 React, Next.js, and modern JavaScript frameworks. I specialize
                 in building performant, scalable web applications with clean,
                 maintainable code and exceptional user experiences.
               </p>
               <p>
                 My technical stack includes React, Next.js, TypeScript, Tailwind
-                CSS, and Node.js for full-stack development. I've built numerous
-                high-performance web UIs, focusing on optimization,
+                CSS, and Node.js for full-stack development. I&apos;ve built
+                numerous high-performance web UIs, focusing on optimization,
                 accessibility, and responsive design across various devices and
                 browsers.
               </p>
               <p>
                 I have extensive experience with state management (Redux,
                 Zustand), API integration (Tanstack Query, Axios), server-side
-                rendering(Next.js), and modern build tools (Vite). I'm
+                rendering(Next.js), and modern build tools (Vite). I&apos;m
                 passionate about writing efficient code, implementing best
                 practices, and delivering pixel-perfect interfaces that users
                 love to interact with.
