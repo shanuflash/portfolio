@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -50,7 +50,9 @@ img::-webkit-selection {
   color: inherit;
 }
 
-*::selection, *::-moz-selection, *::-webkit-selection {
+*::selection,
+*::-moz-selection,
+*::-webkit-selection {
   background: var(--foreground);
   color: var(--background);
 }
@@ -132,17 +134,17 @@ img::-webkit-selection {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
   }
-  
+
   html::-webkit-scrollbar {
     display: none;
   }
-  
+
   body {
     @apply bg-background text-foreground;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
   }
-  
+
   body::-webkit-scrollbar {
     display: none;
   }

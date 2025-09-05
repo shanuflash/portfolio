@@ -1,11 +1,10 @@
 import ThemeToggle from './theme-toggle';
 
-export default function Navigation({currentPage}) {
-
+export default function Navigation({ currentPage }) {
   const navLinks = [
-    { href: "/", text: "Home", underline: currentPage === "home" },
-    { href: "/tools", text: "Tools", underline: currentPage === "tools" },
-    { href: "#about", text: "About", underline: false }
+    { href: '/', text: 'Home', underline: currentPage === 'home' },
+    { href: '/tools', text: 'Tools', underline: currentPage === 'tools' },
+    { href: '#about', text: 'About', underline: false },
   ];
 
   return (
@@ -17,14 +16,14 @@ export default function Navigation({currentPage}) {
               key={index}
               href={link.href}
               className={`text-foreground text-sm ${
-                link.underline ? "underline" : "hover:underline"
+                link.underline ? 'underline' : 'hover:underline'
               }`}
-            > 
+            >
               {link.text}
             </a>
           ))}
         </div>
-        
+
         <div className="flex items-center">
           <ThemeToggle />
         </div>

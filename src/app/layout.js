@@ -35,11 +35,6 @@ export const metadata = {
       'Frontend Developer at SurveySparrow. Specializing in React, Next.js, and modern web development.',
     creator: '@shanuflash',
   },
-  other: {
-    'X-Content-Type-Options': 'nosniff',
-    'X-Frame-Options': 'DENY',
-    'X-XSS-Protection': '1; mode=block',
-  },
 };
 
 export default function RootLayout({ children }) {
@@ -52,9 +47,6 @@ export default function RootLayout({ children }) {
           content="© 2025 Shanu Sivakumar. All rights reserved."
         />
         <meta name="robots" content="index, follow, noarchive, nosnippet" />
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

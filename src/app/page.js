@@ -67,27 +67,20 @@ export default function Home() {
             <h2 className="text-lg font-semibold text-foreground mb-4">
               About
             </h2>
-            <div className="space-y-4 text-sm text-foreground leading-relaxed">
+            <div className="space-y-4 text-sm text-foreground leading-relaxed text-justify">
               <p>
-                I&apos;m a Frontend Developer at SurveySparrow with expertise in
-                React, Next.js, and modern JavaScript frameworks. I specialize
-                in building performant, scalable web applications with clean,
-                maintainable code and exceptional user experiences.
+                I&apos;m a Frontend Developer at SurveySparrow specializing in
+                React, Next.js, and modern JavaScript frameworks. I build
+                performant, scalable web applications with clean code and
+                exceptional user experiences.
               </p>
               <p>
-                My technical stack includes React, Next.js, TypeScript, Tailwind
-                CSS, and Node.js for full-stack development. I&apos;ve built
-                numerous high-performance web UIs, focusing on optimization,
-                accessibility, and responsive design across various devices and
-                browsers.
-              </p>
-              <p>
-                I have extensive experience with state management (Redux,
-                Zustand), API integration (Tanstack Query, Axios), server-side
-                rendering(Next.js), and modern build tools (Vite). I&apos;m
-                passionate about writing efficient code, implementing best
-                practices, and delivering pixel-perfect interfaces that users
-                love to interact with.
+                My stack includes TypeScript, Tailwind CSS, Node.js,
+                Redux/Zustand, and Tanstack Query. While frontend-focused, I
+                also enjoy exploring backend technologies and fullstack
+                development. I&apos;m passionate about optimization,
+                accessibility, and delivering pixel-perfect interfaces that
+                users love to interact with.
               </p>
             </div>
           </div>
