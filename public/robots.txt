@@ -1,0 +1,57 @@
+# Robots.txt for Shanu Sivakumar's Portfolio
+# This website contains proprietary code and design elements
+
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Discourage content scraping and copying
+User-agent: HTTrack
+Disallow: /
+
+User-agent: wget
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: larbin
+Disallow: /
+
+User-agent: b2w/0.1
+Disallow: /
+
+User-agent: psbot
+Disallow: /
+
+User-agent: Python-urllib
+Disallow: /
+
+User-agent: netattache
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: Wayback
+Disallow: /
+
+# Allow legitimate search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Copyright notice
+# © 2025 Shanu Sivakumar. All rights reserved.
+# Unauthorized copying or redistribution is prohibited.
