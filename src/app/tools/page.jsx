@@ -263,7 +263,7 @@ const Tools = () => {
               If you think we should improve or add something new, feel free to
               open an PR/Issue on the{' '}
               <a
-                href="https://github.com/shanuflash/shanuflash.com"
+                href="https://github.com/shanuflash/portfolio"
                 className="text-primary hover:underline"
               >
                 GitHub repo
