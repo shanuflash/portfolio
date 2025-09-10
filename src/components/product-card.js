@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import {
   Tooltip,
@@ -66,9 +67,13 @@ export default function ProductCard({ product }) {
         <p>Work in Progress</p>
       </TooltipContent>
     </Tooltip>
-  ) : (
+  ) : isExternal ? (
     <a href={href} {...linkProps}>
       {cardContent}
     </a>
+  ) : (
+    <Link href={href} {...linkProps}>
+      {cardContent}
+    </Link>
   );
 }

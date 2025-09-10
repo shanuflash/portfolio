@@ -3,6 +3,7 @@ import DiagonalDivider from '../components/diagonal-divider';
 import BinaryTitle from '../components/binary-title';
 import { socialLinks, infoItems } from '../data/portfolio';
 import { getIcon } from '../components/icon-mapper';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -14,10 +15,13 @@ export default function Home() {
           <div className="flex  items-center gap-4 p-0">
             <div className="flex border-r h-full justify-center items-center p-2 soft-grid-border">
               <div className="w-24 h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
-                <img
+                <Image
+                  width={96}
+                  height={96}
                   src="/profile-bw.png"
                   alt="Shanu Sivakumar"
-                  className="w-24 h-24 object-cover rounded-full"
+                  className="object-cover rounded-full"
+                  priority
                 />
               </div>
             </div>

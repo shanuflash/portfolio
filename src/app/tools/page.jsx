@@ -3,10 +3,16 @@ import BinaryTitle from '@/components/binary-title';
 import DiagonalDivider from '@/components/diagonal-divider';
 import Navigation from '@/components/navigation';
 
+export const metadata = {
+  title: 'Tools | Shanu Sivakumar',
+  description:
+    'A collection of useful web tools including character counters, time calculators, text converters, and more. Built with Next.js and React.',
+};
+
 export const products = [
   // Active Tools
   {
-    href: 'tools/char-count',
+    href: '/tools/char-count',
     icon: 'Type',
     name: 'Character Counter',
     category: 'Text Tools',
@@ -16,7 +22,7 @@ export const products = [
 
   // Work in Progress Tools
   {
-    href: 'tools/time-until',
+    href: '/tools/time-until',
     icon: 'Clock',
     name: 'Time Until Date',
     category: 'Time Tools',
@@ -25,7 +31,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/unix',
+    href: '/tools/unix',
     icon: 'Calendar',
     name: 'Unix Timestamp Generator',
     category: 'Time Tools',
@@ -34,7 +40,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/case-convert',
+    href: '/tools/case-convert',
     icon: 'Type',
     name: 'Case Converter',
     category: 'Text Tools',
@@ -43,7 +49,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/lorem',
+    href: '/tools/lorem',
     icon: 'FileText',
     name: 'Lorem Ipsum Generator',
     category: 'Text Tools',
@@ -52,7 +58,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/url-encode',
+    href: '/tools/url-encode',
     icon: 'Link',
     name: 'URL Encoder/Decoder',
     category: 'Developer Tools',
@@ -60,7 +66,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/base64',
+    href: '/tools/base64',
     icon: 'Binary',
     name: 'Base64 Encoder/Decoder',
     category: 'Developer Tools',
@@ -78,7 +84,7 @@ export const products = [
 
   // Design Tools
   {
-    href: 'tools/color-convert',
+    href: '/tools/color-convert',
     icon: 'Palette',
     name: 'Color Converter',
     category: 'Design Tools',
@@ -87,7 +93,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/rgba-to-rgb',
+    href: '/tools/rgba-to-rgb',
     icon: 'Palette',
     name: 'RGBA to RGB Converter',
     category: 'Design Tools',
@@ -95,7 +101,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/uuid',
+    href: '/tools/uuid',
     icon: 'Hash',
     name: 'UUID Generator',
     category: 'Developer Tools',
@@ -112,7 +118,7 @@ export const products = [
   //   description: 'Generate secure, random passwords with customizable options',
   // },
   {
-    href: 'tools/qr',
+    href: '/tools/qr',
     icon: 'QrCode',
     name: 'QR Code Generator',
     category: 'Utilities',
@@ -122,7 +128,7 @@ export const products = [
 
   // Utility Tools
   {
-    href: 'tools/random-number',
+    href: '/tools/random-number',
     icon: 'Shuffle',
     name: 'Random Number Generator',
     category: 'Utilities',
@@ -131,7 +137,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/coin-flip',
+    href: '/tools/coin-flip',
     icon: 'Dice5',
     name: 'Coin Flip & Dice Roll',
     category: 'Utilities',
@@ -139,7 +145,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/age',
+    href: '/tools/age',
     icon: 'Calculator',
     name: 'Age Calculator',
     category: 'Calculators',
@@ -147,7 +153,7 @@ export const products = [
     wip: true,
   },
   {
-    href: 'tools/world-clock',
+    href: '/tools/world-clock',
     icon: 'Clock',
     name: 'World Clock',
     category: 'Time Tools',
@@ -169,7 +175,7 @@ export const products = [
   //   description: 'Calculate mortgage payments, loan interest, or savings goals',
   // },
   {
-    href: 'tools/image-base64',
+    href: '/tools/image-base64',
     icon: 'FileImage',
     name: 'Image to Base64 Converter',
     category: 'Image Tools',
