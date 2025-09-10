@@ -10,7 +10,7 @@ export const products = [
       'Calculate how long until any future date/time with precision countdown',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -22,7 +22,7 @@ export const products = [
       'Convert between Unix timestamps and human-readable dates instantly',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -32,7 +32,7 @@ export const products = [
     category: 'Time Tools',
     description: 'Calculate time elapsed between dates with detailed breakdown',
     isExternal: true,
-    gridPosition: 'border-b md:border-b-0 border-border border-gray-200',
+    gridPosition: 'border-b md:border-b-0 border-border soft-grid-border',
   },
 
   // Text Tools
@@ -46,7 +46,7 @@ export const products = [
       'Counts words, characters (with and without spaces), sentences, and paragraphs',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -58,7 +58,7 @@ export const products = [
       'Convert text to UPPERCASE, lowercase, Title Case, or Sentence case',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -69,7 +69,7 @@ export const products = [
     description:
       'Generate placeholder text with options for paragraphs, sentences, or words',
     isExternal: true,
-    gridPosition: 'border-b md:border-b-0 border-border border-gray-200',
+    gridPosition: 'border-b md:border-b-0 border-border soft-grid-border',
   },
 
   // Developer Tools
@@ -82,7 +82,7 @@ export const products = [
     description: 'Encode or decode special characters in URLs',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -93,7 +93,7 @@ export const products = [
     description: 'Convert text or data to and from Base64 encoding',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -104,7 +104,7 @@ export const products = [
     description:
       'Prettify and validate JSON data to make it readable and error-free',
     isExternal: true,
-    gridPosition: 'border-b md:border-b-0 border-border border-gray-200',
+    gridPosition: 'border-b md:border-b-0 border-border soft-grid-border',
   },
 
   // Design Tools
@@ -118,7 +118,7 @@ export const products = [
       'Convert between HEX, RGB, HSL, and CMYK color formats with color picker',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -129,7 +129,7 @@ export const products = [
     description: 'Strip the alpha channel from an RGBA color',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -139,7 +139,7 @@ export const products = [
     category: 'Developer Tools',
     description: 'Generate universally unique identifiers',
     isExternal: true,
-    gridPosition: 'border-b md:border-b-0 border-border border-gray-200',
+    gridPosition: 'border-b md:border-b-0 border-border soft-grid-border',
   },
 
   // Security Tools
@@ -152,7 +152,7 @@ export const products = [
     description: 'Generate secure, random passwords with customizable options',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -163,7 +163,7 @@ export const products = [
     description: 'Create QR codes from URLs or text input',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
 
   // Utility Tools
@@ -175,7 +175,7 @@ export const products = [
     category: 'Utilities',
     description: 'Generate random numbers within a specified range',
     isExternal: true,
-    gridPosition: 'border-b md:border-b-0 border-border border-gray-200',
+    gridPosition: 'border-b md:border-b-0 border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -186,7 +186,7 @@ export const products = [
     description: 'Simple tools for making random decisions',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -197,7 +197,7 @@ export const products = [
     description: 'Calculate age in years, months, and days from birthdate',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -207,7 +207,7 @@ export const products = [
     category: 'Utilities',
     description: 'Check time in different parts of the world',
     isExternal: true,
-    gridPosition: 'border-b md:border-b-0 border-border border-gray-200',
+    gridPosition: 'border-b md:border-b-0 border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -218,7 +218,7 @@ export const products = [
     description: 'Reduce file size of images while maintaining quality',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -229,7 +229,7 @@ export const products = [
     description: 'Calculate mortgage payments, loan interest, or savings goals',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -239,7 +239,7 @@ export const products = [
     category: 'Calculators',
     description: 'Calculate duration between two dates',
     isExternal: true,
-    gridPosition: 'border-b md:border-b-0 border-border border-gray-200',
+    gridPosition: 'border-b md:border-b-0 border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -250,7 +250,7 @@ export const products = [
     description: 'Encode images into Base64 strings for embedding',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -261,7 +261,7 @@ export const products = [
     description: 'Compare two blocks of text and highlight differences',
     isExternal: true,
     gridPosition:
-      'border-b md:border-b-0 md:border-r border-border border-gray-200',
+      'border-b md:border-b-0 md:border-r border-border soft-grid-border',
   },
   {
     href: 'https://github.com/shanuflash',
@@ -310,7 +310,7 @@ export const infoItems = [
     content: (
       <a
         href="mailto:hello@shanu.dev"
-        className="text-sm text-foreground hover:underline"
+        className="text-sm text-foreground transition-all duration-300 hover:-translate-y-px"
       >
         hello@shanu.dev
       </a>
@@ -324,9 +324,22 @@ export const infoItems = [
         href="https://github.com/shanuflash"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-foreground underline hover:underline"
+        className="inline-flex items-center gap-1 text-sm text-foreground transition-all duration-300 hover:-translate-y-px"
       >
-        View my projects on GitHub ↗
+        <span>View my projects on GitHub</span>
+        <svg
+          className="w-3 h-3"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          />
+        </svg>
       </a>
     ),
   },

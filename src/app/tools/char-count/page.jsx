@@ -1,8 +1,8 @@
 'use client';
 
-import Navigation from '@/components/ui/navigation';
-import BinaryTitle from '@/components/ui/binary-title';
-import DiagonalDivider from '@/components/ui/diagonal-divider';
+import Navigation from '@/components/navigation';
+import BinaryTitle from '@/components/binary-title';
+import DiagonalDivider from '@/components/diagonal-divider';
 import { useState, useMemo } from 'react';
 
 const CharCount = () => {
@@ -82,8 +82,8 @@ const CharCount = () => {
       <Navigation currentPage="tools" />
       <BinaryTitle word="Character Counter" />
 
-      <div className="border-b border-t border-gray-200 bg-background">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto">
+      <div className="border-b border-t soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto">
           <div className="p-6">
             <div className="space-y-6">
               <div>
@@ -93,13 +93,13 @@ const CharCount = () => {
                 <textarea
                   value={text}
                   onChange={handleTextChange}
-                  className="w-full h-48 p-3 border border-gray-200 rounded-md bg-background text-foreground text-sm font-mono resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+                  className="w-full h-48 p-3 border soft-grid-border rounded-md bg-background text-foreground text-sm font-mono resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
                   placeholder="Type or paste your text here to count characters, words, sentences, and paragraphs..."
                 />
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="border border-gray-200 rounded-md p-4 text-center">
+                <div className="border soft-grid-border rounded-md p-4 text-center">
                   <div className="text-2xl font-bold text-foreground">
                     {stats.characters}
                   </div>
@@ -107,7 +107,7 @@ const CharCount = () => {
                     Characters
                   </div>
                 </div>
-                <div className="border border-gray-200 rounded-md p-4 text-center">
+                <div className="border soft-grid-border rounded-md p-4 text-center">
                   <div className="text-2xl font-bold text-foreground">
                     {stats.charactersNoSpaces}
                   </div>
@@ -115,7 +115,7 @@ const CharCount = () => {
                     Characters (no spaces)
                   </div>
                 </div>
-                <div className="border border-gray-200 rounded-md p-4 text-center">
+                <div className="border soft-grid-border rounded-md p-4 text-center">
                   <div className="text-2xl font-bold text-foreground">
                     {stats.words}
                   </div>
@@ -123,7 +123,7 @@ const CharCount = () => {
                     Words
                   </div>
                 </div>
-                <div className="border border-gray-200 rounded-md p-4 text-center">
+                <div className="border soft-grid-border rounded-md p-4 text-center">
                   <div className="text-2xl font-bold text-foreground">
                     {stats.spaces}
                   </div>
@@ -134,7 +134,7 @@ const CharCount = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="border border-gray-200 rounded-md p-4 text-center">
+                <div className="border soft-grid-border rounded-md p-4 text-center">
                   <div className="text-2xl font-bold text-foreground">
                     {stats.sentences}
                   </div>
@@ -142,7 +142,7 @@ const CharCount = () => {
                     Sentences
                   </div>
                 </div>
-                <div className="border border-gray-200 rounded-md p-4 text-center">
+                <div className="border soft-grid-border rounded-md p-4 text-center">
                   <div className="text-2xl font-bold text-foreground">
                     {stats.paragraphs}
                   </div>
@@ -150,7 +150,7 @@ const CharCount = () => {
                     Paragraphs
                   </div>
                 </div>
-                <div className="border border-gray-200 rounded-md p-4 text-center">
+                <div className="border soft-grid-border rounded-md p-4 text-center">
                   <div className="text-2xl font-bold text-foreground">
                     {stats.readingTime}
                   </div>
@@ -166,8 +166,8 @@ const CharCount = () => {
 
       <DiagonalDivider />
 
-      <div className="border-b border-gray-200 bg-background">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto">
+      <div className="border-b soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto">
           <div className="p-6">
             <h2 className="text-lg font-semibold text-foreground mb-4">
               Additional Features
@@ -177,7 +177,7 @@ const CharCount = () => {
                 <span className="text-sm text-foreground">Clear all text</span>
                 <button
                   onClick={handleClearText}
-                  className="px-4 py-2 text-sm border border-gray-200 rounded-md text-foreground hover:bg-muted transition-colors"
+                  className="px-4 py-2 text-sm border soft-grid-border rounded-md text-foreground hover:bg-muted transition-colors"
                 >
                   Clear
                 </button>
@@ -188,7 +188,7 @@ const CharCount = () => {
                 <span className="text-sm text-foreground">Copy statistics</span>
                 <button
                   onClick={handleCopyStats}
-                  className="px-4 py-2 text-sm border border-gray-200 rounded-md text-foreground hover:bg-muted transition-colors"
+                  className="px-4 py-2 text-sm border soft-grid-border rounded-md text-foreground hover:bg-muted transition-colors"
                 >
                   Copy Stats
                 </button>
@@ -202,8 +202,8 @@ const CharCount = () => {
 
       {/* Word Frequency Section */}
 
-      <div className="border-b border-gray-200 bg-background">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto">
+      <div className="border-b soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto">
           <div className="p-6">
             <h2 className="text-lg font-semibold text-foreground mb-4">
               Word Frequency
@@ -221,7 +221,7 @@ const CharCount = () => {
                   {stats.wordFrequency.map(([word, count], index) => (
                     <div
                       key={word}
-                      className="flex justify-between items-center p-3 border border-gray-200 rounded-md bg-background"
+                      className="flex justify-between items-center p-3 border soft-grid-border rounded-md bg-background"
                     >
                       <div className="flex items-center gap-3">
                         <span className="text-xs text-muted-foreground w-6 text-center">

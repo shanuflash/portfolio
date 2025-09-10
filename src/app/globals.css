@@ -71,7 +71,7 @@ img::-webkit-selection {
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
+  --accent: #1d4ed8;
   --accent-foreground: oklch(0.21 0.006 285.885);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
@@ -93,8 +93,9 @@ img::-webkit-selection {
 }
 
 .dark {
-  --background: oklch(0.18 0.008 285.823);
-  --foreground: oklch(0.92 0.002 285.823);
+  --background: oklch(0.071 0.004 285.823);
+  --foreground: oklch(0.96 0.002 285.823);
+  --accent: #60a5fa;
   --card: oklch(0.22 0.008 285.885);
   --card-foreground: oklch(0.92 0.002 285.823);
   --popover: oklch(0.22 0.008 285.885);
@@ -104,8 +105,7 @@ img::-webkit-selection {
   --secondary: oklch(0.28 0.008 286.033);
   --secondary-foreground: oklch(0.92 0.002 285.823);
   --muted: oklch(0.28 0.008 286.033);
-  --muted-foreground: oklch(0.75 0.012 286.067);
-  --accent: oklch(0.28 0.008 286.033);
+  --muted-foreground: oklch(0.55 0.012 286.067);
   --accent-foreground: oklch(0.92 0.002 285.823);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
@@ -148,4 +148,32 @@ img::-webkit-selection {
   body::-webkit-scrollbar {
     display: none;
   }
+}
+
+@layer components {
+  .accent-text {
+    color: var(--accent) !important;
+  }
+
+  .hover-accent-text:hover {
+    color: var(--accent) !important;
+  }
+
+  .soft-grid-border {
+    @apply border-gray-200;
+  }
+
+  .dark .soft-grid-border {
+    border-color: #404040;
+  }
+
+  .profile-glow {
+    box-shadow: 0 0 20px rgba(var(--accent), 0.3);
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }

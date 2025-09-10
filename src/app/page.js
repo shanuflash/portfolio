@@ -1,43 +1,47 @@
-import Navigation from '../components/ui/navigation';
-import DiagonalDivider from '../components/ui/diagonal-divider';
-import BinaryTitle from '../components/ui/binary-title';
+import Navigation from '../components/navigation';
+import DiagonalDivider from '../components/diagonal-divider';
+import BinaryTitle from '../components/binary-title';
 import { socialLinks, infoItems } from '../data/portfolio';
-import { getIcon } from '../components/ui/icon-mapper';
+import { getIcon } from '../components/icon-mapper';
 
 export default function Home() {
   return (
     <div className="min-h-screen font-mono bg-background">
       <Navigation currentPage="home" />
       <BinaryTitle word="Home" />
-      <div className="border-t border-b border-gray-200 bg-background">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto">
+      <div className="border-t border-b soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto">
           <div className="flex  items-center gap-4 p-0">
-            <div className="flex border-r h-full justify-center items-center p-1 border-gray-200">
-              <div className="w-20 h-20 rounded-full bg-foreground flex items-center justify-center overflow-hidden">
+            <div className="flex border-r h-full justify-center items-center p-2 soft-grid-border">
+              <div className="w-24 h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
                 <img
                   src="/profile-bw.png"
                   alt="Shanu Sivakumar"
-                  className="w-20 h-20 object-cover rounded-full"
+                  className="w-24 h-24 object-cover rounded-full"
                 />
               </div>
             </div>
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
-                <h1 className="text-lg  sm:text-2xl font-bold text-foreground">
-                  Shanu Sivakumar
+            <div className="flex-1 pl-6">
+              <div className="flex items-center gap-2 mb-2">
+                <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+                  Shanu <span className="text-foreground/80">Sivakumar</span>
                 </h1>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Full-stack curious, frontend obsessed.
+              <p className="text-base text-muted-foreground font-light">
+                Full-stack curious,{' '}
+                <span className="text-foreground/80 font-medium">
+                  frontend obsessed
+                </span>
+                .
               </p>
             </div>
           </div>
         </div>
       </div>
       <DiagonalDivider />
-      <div className="border-b border-gray-200 bg-background">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto">
-          <div className="space-y-4 p-6">
+      <div className="border-b soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+          <div className="space-y-6 p-8">
             {infoItems.map((item) => {
               const iconElement =
                 typeof item.icon === 'string'
@@ -51,7 +55,7 @@ export default function Home() {
                   >
                     {iconElement}
                   </div>
-                  <span className="text-sm text-foreground">
+                  <span className="text-sm text-foreground transition-all duration-300 hover:-translate-y-px">
                     {item.content}
                   </span>
                 </div>
@@ -61,26 +65,30 @@ export default function Home() {
         </div>
       </div>
       <DiagonalDivider />
-      <div id="about" className="border-b border-gray-200 bg-background">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto">
-          <div className="p-6">
-            <h2 className="text-lg font-semibold text-foreground mb-4">
-              About
-            </h2>
-            <div className="space-y-4 text-sm text-foreground leading-relaxed text-justify">
+      <div id="about" className="border-b soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+          <div className="p-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">About</h2>
+            <div className="space-y-5 text-sm text-foreground leading-relaxed text-justify">
               <p>
                 I&apos;m a Frontend Developer at SurveySparrow specializing in
-                React, Next.js, and modern JavaScript frameworks. I build
-                performant, scalable web applications with clean code and
-                exceptional user experiences.
+                <span className="accent-text font-medium"> React</span>,{' '}
+                <span className="accent-text font-medium">Next.js</span>, and
+                modern JavaScript frameworks. I build performant, scalable web
+                applications with clean code and exceptional user experiences.
               </p>
               <p>
-                My stack includes TypeScript, Tailwind CSS, Node.js,
-                Redux/Zustand, and Tanstack Query. While frontend-focused, I
-                also enjoy exploring backend technologies and fullstack
-                development. I&apos;m passionate about optimization,
-                accessibility, and delivering pixel-perfect interfaces that
-                users love to interact with.
+                My stack includes{' '}
+                <span className="accent-text font-medium">TypeScript</span>,{' '}
+                <span className="accent-text font-medium">Tailwind CSS</span>,{' '}
+                <span className="accent-text font-medium">Node.js</span>,
+                <span className="accent-text font-medium"> Redux/Zustand</span>,
+                and{' '}
+                <span className="accent-text font-medium">Tanstack Query</span>.
+                While frontend-focused, I also enjoy exploring backend
+                technologies and fullstack development. I&apos;m passionate
+                about optimization, accessibility, and delivering pixel-perfect
+                interfaces that users love to interact with.
               </p>
             </div>
           </div>
@@ -88,26 +96,25 @@ export default function Home() {
       </div>
       <DiagonalDivider />
       <div
-        id="about"
-        className="bg-background border-b border-gray-200 relative"
+        id="socials"
+        className="bg-background border-b soft-grid-border relative"
       >
-        <div className="max-w-2xl border-x border-gray-200 mx-auto relative">
-          <div className="p-6 flex items-center">
-            <h2 className="text-lg font-semibold text-foreground pr-4">
-              Socials
-            </h2>
-            <div className="absolute top-0 bottom-0 left-[110px] w-px bg-gray-200"></div>
-            <div className="flex items-center space-x-6 pl-4">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto relative">
+          <div className="p-8 flex items-center">
+            <h2 className="text-xl font-bold text-foreground pr-6">Socials</h2>
+            <div className="absolute top-0 bottom-0 left-[120px] w-px soft-grid-border"></div>
+            <div className="flex items-center space-x-8 pl-6">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="transition-all duration-300 hover-accent-text hover:-translate-y-px hover:scale-110"
                 >
                   {getIcon(
                     social.icon,
-                    'h-5 w-5 text-foreground hover:text-muted-foreground transition-colors'
+                    'h-6 w-6 text-foreground transition-all duration-300 hover-accent-text hover:scale-110'
                   )}
                 </a>
               ))}

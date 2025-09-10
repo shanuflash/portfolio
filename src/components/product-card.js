@@ -4,7 +4,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from '@/components/ui/tooltip';
-import { getIcon } from '@/components/ui/icon-mapper';
+import { getIcon } from '@/components/icon-mapper';
 
 export default function ProductCard({ product }) {
   const {

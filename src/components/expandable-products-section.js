@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-import ProductCard from './product-card';
+import ProductCard from '../product-card';
 
 export default function ExpandableProductsSection({ products }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -16,9 +16,9 @@ export default function ExpandableProductsSection({ products }) {
   return (
     <div
       id="products"
-      className="border-b border-border border-gray-200 bg-background"
+      className="border-b border-border soft-grid-border bg-background"
     >
-      <div className="max-w-2xl border-x border-gray-200 mx-auto">
+      <div className="max-w-2xl border-x soft-grid-border mx-auto">
         <div className="p-6">
           <h2 className="text-lg font-semibold text-foreground mb-4">
             Tools & Utilities
@@ -33,7 +33,7 @@ export default function ExpandableProductsSection({ products }) {
               scrollbarColor: '#e5e7eb #f3f4f6',
             }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border soft-grid-border rounded-lg overflow-hidden">
               {visibleProducts.map((product, index) => {
                 const isLastRow =
                   Math.floor(index / 2) ===
@@ -48,7 +48,7 @@ export default function ExpandableProductsSection({ products }) {
                 if (!isRightColumn) {
                   gridPosition += 'md:border-r ';
                 }
-                gridPosition += 'border-gray-200';
+                gridPosition += 'soft-grid-border';
 
                 return (
                   <ProductCard
@@ -67,7 +67,7 @@ export default function ExpandableProductsSection({ products }) {
             <div className="mt-6 flex justify-center">
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="flex items-center gap-2 px-4 py-2 text-sm text-foreground hover:bg-gray-100 rounded-lg transition-colors duration-200 border border-gray-200"
+                className="flex items-center gap-2 px-4 py-2 text-sm text-foreground hover:bg-gray-100 rounded-lg transition-colors duration-200 border soft-grid-border"
               >
                 <span>
                   {isExpanded

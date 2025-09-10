@@ -1,7 +1,7 @@
-import ProductCard from '@/components/sections/product-card';
-import BinaryTitle from '@/components/ui/binary-title';
-import DiagonalDivider from '@/components/ui/diagonal-divider';
-import Navigation from '@/components/ui/navigation';
+import ProductCard from '@/components/product-card';
+import BinaryTitle from '@/components/binary-title';
+import DiagonalDivider from '@/components/diagonal-divider';
+import Navigation from '@/components/navigation';
 
 export const products = [
   // Active Tools
@@ -197,15 +197,15 @@ const Tools = () => {
     <div className="min-h-screen font-mono bg-background">
       <Navigation currentPage="tools" />
       <BinaryTitle word="Tools" />
-      <div className="border-b border-t border-gray-200 bg-background">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto grid grid-cols-1 sm:grid-cols-2">
+      <div className="border-b border-t soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto grid grid-cols-1 sm:grid-cols-2">
           {products.map((product, index) => {
             const isRightColumn = index % 2 === 1;
 
             const isInLastRow =
               index >= products.length - (products.length % 2 === 0 ? 2 : 1);
 
-            let gridPosition = 'border-gray-200 border-b';
+            let gridPosition = 'soft-grid-border border-b';
 
             if (!isInLastRow) {
               gridPosition += ' sm:border-b';
@@ -232,11 +232,11 @@ const Tools = () => {
         </div>
       </div>
       <DiagonalDivider />
-      <div className="border-b border-gray-200 bg-background">
-        <div className="max-w-2xl border-x border-gray-200 mx-auto">
+      <div className="border-b soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto">
           <div className="p-8 text-center">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 border-2 border-gray-200 rounded-full flex items-center justify-center bg-background">
+              <div className="w-12 h-12 border-2 soft-grid-border rounded-full flex items-center justify-center bg-background">
                 <svg
                   className="w-6 h-6 text-muted-foreground"
                   fill="none"
