@@ -1,12 +1,28 @@
 import Link from 'next/link';
 import ThemeToggle from './ui/theme-toggle';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 
-export default function Navigation({ currentPage }) {
+export default async function Navigation({ currentPage }) {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  const isAdmin = session?.user?.role === 'admin';
+
   const navLinks = [
     { href: '/', text: 'Home', isActive: currentPage === 'home' },
     { href: '/tools', text: 'Tools', isActive: currentPage === 'tools' },
     { href: '/blog', text: 'Blog', isActive: currentPage === 'blog' },
   ];
+
+  if (isAdmin) {
+    navLinks.push({
+      href: '/area51',
+      text: 'Area51',
+      isActive: currentPage === 'area51',
+    });
+  }
 
   return (
     <nav className="border-b soft-grid-border bg-background">

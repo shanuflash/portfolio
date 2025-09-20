@@ -277,19 +277,19 @@ export const products = [
 
 export const socialLinks = [
   {
-    href: 'https://github.com/shanuflash',
-    icon: 'Github',
-    alt: 'GitHub',
+    href: 'https://www.linkedin.com/in/shanuflash/',
+    icon: 'Linkedin',
+    alt: 'LinkedIn',
+  },
+  {
+    href: 'https://instagram.com/shanuflash',
+    icon: 'Instagram',
+    alt: 'Instagram',
   },
   {
     href: 'https://x.com/shanuflash',
     icon: 'Twitter',
     alt: 'X',
-  },
-  {
-    href: 'https://www.linkedin.com/in/shanuflash/',
-    icon: 'Linkedin',
-    alt: 'LinkedIn',
   },
 ];
 

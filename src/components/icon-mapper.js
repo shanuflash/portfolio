@@ -24,6 +24,7 @@ import {
   Code,
   User,
   Mail,
+  Instagram,
 } from 'lucide-react';
 
 const iconMap = {
@@ -49,6 +50,7 @@ const iconMap = {
   Github,
   Twitter,
   Linkedin,
+  Instagram,
   Code,
   User,
   Mail,
