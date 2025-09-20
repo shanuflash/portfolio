@@ -1,5 +1,4 @@
 'use client';
-// Based on magicui.design/docs/components/animated-theme-toggler
 
 import { useState, useEffect, useRef } from 'react';
 import { Sun, Moon } from 'lucide-react';
