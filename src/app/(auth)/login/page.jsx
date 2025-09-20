@@ -7,7 +7,7 @@ const Login = () => {
   const signIn = async () => {
     const data = await authClient.signIn.social({
       provider: 'google',
-      redirectTo: '/area51',
+      callbackURL: '/area51',
     });
     console.log(data);
   };

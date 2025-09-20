@@ -1,14 +1,7 @@
 import Link from 'next/link';
 import ThemeToggle from './ui/theme-toggle';
-import { auth } from '@/lib/auth';
-import { headers } from 'next/headers';
 
-export default async function Navigation({ currentPage }) {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-
-  const isAdmin = session?.user?.role === 'admin';
+export default function Navigation({ currentPage, showAdminLink = false }) {
 
   const navLinks = [
     { href: '/', text: 'Home', isActive: currentPage === 'home' },
@@ -16,7 +9,7 @@ export default async function Navigation({ currentPage }) {
     { href: '/blog', text: 'Blog', isActive: currentPage === 'blog' },
   ];
 
-  if (isAdmin) {
+  if (showAdminLink) {
     navLinks.push({
       href: '/area51',
       text: 'Area51',

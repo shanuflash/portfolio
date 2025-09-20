@@ -56,7 +56,7 @@ const Area51 = async () => {
 
   return (
     <div className="min-h-screen font-mono bg-background">
-      <Navigation currentPage="area51" />
+      <Navigation currentPage="area51" showAdminLink={true} />
       <BinaryTitle word="Area51" />
       <div className="border-t border-b soft-grid-border bg-background">
         <div className="max-w-2xl border-x soft-grid-border mx-auto">
