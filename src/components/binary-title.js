@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { TextScramble } from './ui/text-scramble';
+import { Tooltip, TooltipTrigger, TooltipContent } from './ui/tooltip';
 
 const BinaryTitle = ({ word }) => {
   const [showEnglish, setShowEnglish] = useState(false);
@@ -13,17 +14,24 @@ const BinaryTitle = ({ word }) => {
   return (
     <div className="flex justify-center">
       <div className="max-w-2xl border-x soft-grid-border mx-auto py-8 w-full">
-        <div
-          className="text-center font-mono text-sm text-muted-foreground cursor-help"
-          onMouseEnter={() => setShowEnglish(true)}
-          onMouseLeave={() => setShowEnglish(false)}
-        >
-          {showEnglish ? (
-            <TextScramble>{word}</TextScramble>
-          ) : (
-            <TextScramble>{binaryWord}</TextScramble>
-          )}
-        </div>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div
+              className="text-center font-mono text-sm text-muted-foreground cursor-help"
+              onMouseEnter={() => setShowEnglish(true)}
+              onMouseLeave={() => setShowEnglish(false)}
+            >
+              {showEnglish ? (
+                <TextScramble>{word}</TextScramble>
+              ) : (
+                <TextScramble>{binaryWord}</TextScramble>
+              )}
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{word}</p>
+          </TooltipContent>
+        </Tooltip>
       </div>
     </div>
   );
