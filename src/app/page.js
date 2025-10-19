@@ -1,7 +1,8 @@
 import Navigation from '../components/navigation';
 import DiagonalDivider from '../components/diagonal-divider';
 import BinaryTitle from '../components/binary-title';
-import { socialLinks, infoItems } from '../data/portfolio';
+import ProductCard from '../components/product-card';
+import { socialLinks, infoItems, projects } from '../data/portfolio';
 import { getIcon } from '../components/icon-mapper';
 import Image from 'next/image';
 
@@ -65,6 +66,25 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </div>
+      <DiagonalDivider />
+      <div id="projects" className="border-b soft-grid-border bg-background">
+        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+          <div className="p-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Projects</h2>
+            <div className="grid grid-cols-1 gap-0 border soft-grid-border rounded-lg overflow-hidden">
+              {projects.map((project, index) => (
+                <ProductCard
+                  key={index}
+                  product={{
+                    ...project,
+                    gridPosition: index === projects.length - 1 ? '' : 'border-b soft-grid-border',
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

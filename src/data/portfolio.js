@@ -275,6 +275,18 @@ export const products = [
   },
 ];
 
+export const projects = [
+  {
+    href: '/whispr',
+    icon: 'MessageSquare',
+    name: 'Whispr',
+    status: 'Live',
+    category: 'Real-time Chat Application',
+    description: 'Built with Next.js, TypeScript, and Ably Chat SDK featuring WebSocket messaging, typing indicators, and user presence tracking',
+    isExternal: true,
+  },
+];
+
 export const socialLinks = [
   {
     href: 'https://www.linkedin.com/in/shanuflash/',

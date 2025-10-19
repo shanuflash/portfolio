@@ -25,6 +25,7 @@ import {
   User,
   Mail,
   Instagram,
+  MessageSquare,
 } from 'lucide-react';
 
 const iconMap = {
@@ -54,6 +55,7 @@ const iconMap = {
   Code,
   User,
   Mail,
+  MessageSquare,
 };
 
 export function getIcon(iconName, className = '') {
