@@ -282,7 +282,8 @@ export const projects = [
     name: 'Whispr',
     status: 'Live',
     category: 'Real-time Chat Application',
-    description: 'Built with Next.js, TypeScript, and Ably Chat SDK featuring WebSocket messaging, typing indicators, and user presence tracking',
+    description:
+      'Built with Next.js, TypeScript, and Ably Chat SDK featuring WebSocket messaging, typing indicators, and user presence tracking',
     isExternal: true,
   },
 ];

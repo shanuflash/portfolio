@@ -2,7 +2,6 @@ import Link from 'next/link';
 import ThemeToggle from './ui/theme-toggle';
 
 export default function Navigation({ currentPage, showAdminLink = false }) {
-
   const navLinks = [
     { href: '/', text: 'Home', isActive: currentPage === 'home' },
     { href: '/tools', text: 'Tools', isActive: currentPage === 'tools' },

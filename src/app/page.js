@@ -80,7 +80,10 @@ export default function Home() {
                   key={index}
                   product={{
                     ...project,
-                    gridPosition: index === projects.length - 1 ? '' : 'border-b soft-grid-border',
+                    gridPosition:
+                      index === projects.length - 1
+                        ? ''
+                        : 'border-b soft-grid-border',
                   }}
                 />
               ))}
