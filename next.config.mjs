@@ -2,19 +2,33 @@
 
 const nextConfig = {
   async rewrites() {
-    const devDomain = process.env.NEXT_PUBLIC_WHISPR_DEV_DOMAIN;
-    const prodDomain = process.env.NEXT_PUBLIC_WHISPR_PROD_DOMAIN;
+    const devWhisprDomain = process.env.NEXT_PUBLIC_WHISPR_DEV_DOMAIN;
+    const prodWhisprDomain = process.env.NEXT_PUBLIC_WHISPR_PROD_DOMAIN;
+    const devInvoicezzDomain = process.env.NEXT_PUBLIC_INVOICEZZ_DEV_DOMAIN;
+    const prodInvoicezzDomain = process.env.NEXT_PUBLIC_INVOICEZZ_PROD_DOMAIN;
     const isDev = process.env.NODE_ENV === 'development';
-    const baseUrl = isDev ? devDomain : prodDomain;
+
+    const whisprBaseUrl = isDev ? devWhisprDomain : prodWhisprDomain;
+    const invoicezzBaseUrl = isDev ? devInvoicezzDomain : prodInvoicezzDomain;
 
     return [
+      // whispr
       {
         source: '/whispr',
-        destination: `${baseUrl}/whispr`,
+        destination: `${whisprBaseUrl}/whispr`,
       },
       {
         source: '/whispr/:path*',
-        destination: `${baseUrl}/whispr/:path*`,
+        destination: `${whisprBaseUrl}/whispr/:path*`,
+      },
+      // invoicezz
+      {
+        source: '/invoicezz',
+        destination: `${invoicezzBaseUrl}/invoicezz`,
+      },
+      {
+        source: '/invoicezz/:path*',
+        destination: `${invoicezzBaseUrl}/invoicezz/:path*`,
       },
     ];
   },
