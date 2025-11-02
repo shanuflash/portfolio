@@ -26,6 +26,7 @@ import {
   Mail,
   Instagram,
   MessageSquare,
+  Paperclip,
 } from 'lucide-react';
 
 const iconMap = {
@@ -56,6 +57,7 @@ const iconMap = {
   User,
   Mail,
   MessageSquare,
+  Paperclip,
 };
 
 export function getIcon(iconName, className = '') {

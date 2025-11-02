@@ -286,6 +286,16 @@ export const projects = [
       'Built with Next.js, TypeScript, and Ably Chat SDK featuring WebSocket messaging, typing indicators, and user presence tracking',
     isExternal: true,
   },
+  {
+    href: 'https://www.npmjs.com/package/react-attachment-kit',
+    icon: 'Paperclip',
+    name: 'React Attachment Kit',
+    status: 'Live',
+    category: 'React Component Library',
+    description:
+      'A complete React component kit for handling file attachments. react-attachment-kit provides both a clean, collapsible card layout to display your file list and a powerful, interactive modal to preview them.',
+    isExternal: true,
+  },
 ];
 
 export const socialLinks = [
