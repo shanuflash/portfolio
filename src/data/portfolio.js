@@ -287,6 +287,16 @@ export const projects = [
     isExternal: true,
   },
   {
+    href: '/polyform',
+    icon: 'FileText',
+    name: 'PolyForm',
+    status: 'Live',
+    category: 'Practical Survey Platform',
+    description: 'Build forms with ease using PolyForm',
+    isWIP: true,
+    isExternal: true,
+  },
+  {
     href: 'https://www.npmjs.com/package/react-attachment-kit',
     icon: 'Paperclip',
     name: 'React Attachment Kit',
