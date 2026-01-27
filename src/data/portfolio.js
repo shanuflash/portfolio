@@ -287,6 +287,16 @@ export const projects = [
     isExternal: true,
   },
   {
+    href: 'nextlevel.vercel.app',
+    icon: 'Gamepad2',
+    name: 'NextLevel',
+    status: 'Live',
+    category: 'Gaming Catalog Manager',
+    description: 'Letterboxd, but for games',
+    isWIP: true,
+    isExternal: true,
+  },
+  {
     href: '/polyform',
     icon: 'FileText',
     name: 'PolyForm',
