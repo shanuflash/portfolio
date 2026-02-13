@@ -277,7 +277,7 @@ export const products = [
 
 export const projects = [
   {
-    href: '/whispr',
+    href: 'https://whispr.shanu.dev',
     icon: 'MessageSquare',
     name: 'Whispr',
     status: 'Live',
@@ -287,7 +287,7 @@ export const projects = [
     isExternal: true,
   },
   {
-    href: 'nextlevel.vercel.app',
+    href: 'https://nextlevel.shanu.dev',
     icon: 'Gamepad2',
     name: 'NextLevel',
     status: 'Live',
@@ -297,7 +297,7 @@ export const projects = [
     isExternal: true,
   },
   {
-    href: '/polyform',
+    href: 'https://polyform.shanu.dev',
     icon: 'FileText',
     name: 'PolyForm',
     status: 'Live',
