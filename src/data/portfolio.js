@@ -291,9 +291,9 @@ export const projects = [
     icon: 'Gamepad2',
     name: 'NextLevel',
     status: 'Live',
-    category: 'Personal Gaming Index',
+    category: 'Your Gaming Catalog',
     description: 'Letterboxd, but for games',
-    isWIP: true,
+    isWIP: false,
     isExternal: true,
   },
   {
