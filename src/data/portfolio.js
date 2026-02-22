@@ -277,22 +277,22 @@ export const products = [
 
 export const projects = [
   {
-    href: 'https://whispr.shanu.dev',
-    icon: 'MessageSquare',
-    name: 'Whispr',
-    status: 'Live',
-    category: 'Real-time Chat Application',
-    description:
-      'Built with Next.js, TypeScript, and Ably Chat SDK featuring WebSocket messaging, typing indicators, and user presence tracking',
-    isExternal: true,
-  },
-  {
     href: 'https://nextlevel.shanu.dev',
     icon: 'Gamepad2',
     name: 'NextLevel',
     status: 'Live',
-    category: 'Your Gaming Catalog',
-    description: 'Letterboxd, but for games',
+    description: 'Personal Gaming Dashboard',
+    // description: 'Letterboxd, but for games',
+    isWIP: false,
+    isExternal: true,
+  },
+  {
+    href: 'https://invoicezz.shanu.dev',
+    icon: 'FileText',
+    name: 'InvoicEzz',
+    status: 'Live',
+    description: 'Minimalist Invoicing Tool',
+    // description: 'Generate invoices with ease',
     isWIP: false,
     isExternal: true,
   },
@@ -301,9 +301,24 @@ export const projects = [
     icon: 'FileText',
     name: 'PolyForm',
     status: 'Live',
-    category: 'Practical Survey Platform',
-    description: 'Build forms with ease using PolyForm',
+    description: 'Practical Survey Builder',
     isWIP: true,
+    isExternal: true,
+  },
+  {
+    href: 'https://whispr.shanu.dev',
+    icon: 'MessageSquare',
+    name: 'Whispr',
+    status: 'Live',
+    description: 'Real-time Chat Application',
+    isExternal: true,
+  },
+  {
+    href: 'https://github.com/shanuflash/freeram',
+    icon: 'MemoryStick',
+    name: 'FreeRam',
+    status: 'Live',
+    description: 'Lightweight RAM Optimization Tool',
     isExternal: true,
   },
   {
@@ -311,9 +326,7 @@ export const projects = [
     icon: 'Paperclip',
     name: 'React Attachment Kit',
     status: 'Live',
-    category: 'React Component Library',
-    description:
-      'A complete React component kit for handling file attachments. react-attachment-kit provides both a clean, collapsible card layout to display your file list and a powerful, interactive modal to preview them.',
+    description: 'React Component Library',
     isExternal: true,
   },
 ];

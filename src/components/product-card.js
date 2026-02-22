@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
     href,
     icon: iconName,
     name,
-    category,
+    description,
     isWIP = false,
     isExternal = false,
     gridPosition = '',
@@ -62,7 +62,7 @@ export default function ProductCard({ product }) {
             )}
           </div>
           <div className="text-xs text-muted-foreground text-left">
-            {category}
+            {description}
           </div>
         </div>
       </div>
