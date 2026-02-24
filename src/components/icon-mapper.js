@@ -29,6 +29,7 @@ import {
   Paperclip,
   Gamepad2,
   MemoryStick,
+  Trophy,
 } from 'lucide-react';
 
 const iconMap = {
@@ -62,6 +63,7 @@ const iconMap = {
   Paperclip,
   Gamepad2,
   MemoryStick,
+  Trophy,
 };
 
 export function getIcon(iconName, className = '') {
