@@ -26,7 +26,7 @@ export default function ProductCard({ product }) {
     <div
       className={`flex items-center justify-between p-4 transition-colors relative ${
         isWIP
-          ? 'opacity-60 hover:opacity-70 cursor-not-allowed bg-muted/10'
+          ? 'opacity-40 cursor-not-allowed'
           : 'hover:bg-muted/50'
       } ${gridPosition}`}
     >
@@ -40,35 +40,35 @@ export default function ProductCard({ product }) {
         >
           {getIcon(
             iconName,
-            `h-6 w-6 ${isWIP ? 'text-muted-foreground/60' : 'text-foreground'}`
+            `h-6 w-6 ${isWIP ? 'text-muted-foreground' : 'text-foreground'}`
           )}
           {isWIP && (
             <div className="absolute -top-1 -right-1 bg-background border border-muted-foreground/30 rounded-full p-0.5">
-              <Lock className="h-2.5 w-2.5 text-muted-foreground/60" />
+              <Lock className="h-2.5 w-2.5 text-muted-foreground" />
             </div>
           )}
         </div>
         <div>
           <div
             className={`font-medium text-sm truncate flex items-center gap-2 ${
-              isWIP ? 'text-muted-foreground/80' : 'text-foreground'
+              isWIP ? 'text-muted-foreground' : 'text-foreground'
             }`}
           >
             {name}
             {isWIP && (
-              <span className="text-xs px-1.5 py-0.5 bg-muted/40 text-muted-foreground/70 rounded border border-dashed border-muted-foreground/20">
+              <span className="text-[10px] px-1 py-0.5 bg-muted/40 text-muted-foreground rounded border border-dashed border-muted-foreground/30">
                 WIP
               </span>
             )}
           </div>
-          <div className="text-xs text-muted-foreground text-left">
+          <div className="text-xs text-muted-foreground text-left line-clamp-2 min-h-[2lh]">
             {description}
           </div>
         </div>
       </div>
-      <ArrowRight
-        className={`w-4 h-4 ${isWIP ? 'text-muted-foreground/40' : 'text-muted-foreground'}`}
-      />
+      {!isWIP && (
+        <ArrowRight className="w-4 h-4 text-muted-foreground" />
+      )}
     </div>
   );
 

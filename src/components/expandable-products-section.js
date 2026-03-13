@@ -18,7 +18,7 @@ export default function ExpandableProductsSection({ products }) {
       id="products"
       className="border-b border-border soft-grid-border bg-background"
     >
-      <div className="max-w-2xl border-x soft-grid-border mx-auto">
+      <div className="max-w-4xl border-x soft-grid-border mx-auto">
         <div className="p-6">
           <h2 className="text-lg font-semibold text-foreground mb-4">
             Tools & Utilities

@@ -1,7 +1,7 @@
 import Navigation from '../components/navigation';
 import DiagonalDivider from '../components/diagonal-divider';
 import BinaryTitle from '../components/binary-title';
-import ProductCard from '../components/product-card';
+import BentoCard from '../components/bento-card';
 import { socialLinks, infoItems, projects } from '../data/portfolio';
 import { getIcon } from '../components/icon-mapper';
 import Image from 'next/image';
@@ -12,14 +12,14 @@ export default function Home() {
       <Navigation currentPage="home" />
       <BinaryTitle word="Home" />
       <div className="border-t border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="flex  items-center gap-4 p-0">
             <div className="flex border-r h-full justify-center items-center p-2 soft-grid-border">
               <div className="w-24 h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
                 <Image
                   width={96}
                   height={96}
-                  src="/profile-bw.png"
+                  src="/profile-bw.webp"
                   alt="Shanu Sivakumar"
                   className="object-cover rounded-full"
                   priority
@@ -45,7 +45,7 @@ export default function Home() {
       </div>
       <DiagonalDivider />
       <div className="border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="space-y-6 p-8">
             {infoItems.map((item) => {
               const iconElement =
@@ -71,47 +71,73 @@ export default function Home() {
       </div>
       <DiagonalDivider />
       <div id="projects" className="border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <h2 className="text-xl font-bold text-foreground mb-6">Projects</h2>
-            <div className="grid grid-cols-1 gap-0 border soft-grid-border rounded-lg overflow-hidden">
-              {projects.map((project, index) => (
-                <ProductCard
-                  key={index}
-                  product={{
-                    ...project,
-                    gridPosition:
-                      index === projects.length - 1
-                        ? ''
-                        : 'border-b soft-grid-border',
-                  }}
-                />
+            <div className="border soft-grid-border rounded-lg overflow-hidden">
+              {/* Row 1: Hero project — full width */}
+              {projects.filter((p) => p.size === 'large').map((project) => (
+                <div key={project.name} className="border-b soft-grid-border">
+                  <BentoCard project={project} />
+                </div>
               ))}
+
+              {/* Row 2: Medium projects — 2 columns */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 border-b soft-grid-border">
+                {projects.filter((p) => p.size === 'medium').map((project, i, arr) => (
+                  <div
+                    key={project.name}
+                    className={i < arr.length - 1 ? 'border-b sm:border-b-0 sm:border-r soft-grid-border' : ''}
+                  >
+                    <BentoCard project={project} />
+                  </div>
+                ))}
+              </div>
+
+              {/* Row 3: Small projects — 2 columns to match row 2 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2">
+                {projects.filter((p) => p.size === 'small').map((project, i, arr) => {
+                  const isLastOdd = arr.length % 2 === 1 && i === arr.length - 1;
+                  return (
+                    <div
+                      key={project.name}
+                      className={[
+                        i < arr.length - 1 ? 'border-b sm:border-b-0' : '',
+                        !isLastOdd && i % 2 === 0 ? 'sm:border-r' : '',
+                        isLastOdd ? 'sm:col-span-2 sm:border-t' : '',
+                        'soft-grid-border',
+                      ].join(' ')}
+                    >
+                      <BentoCard project={project} />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </div>
       <DiagonalDivider />
       <div id="about" className="border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <h2 className="text-xl font-bold text-foreground mb-6">About</h2>
-            <div className="space-y-5 text-sm text-foreground leading-relaxed text-justify">
+            <div className="space-y-5 text-sm text-foreground leading-relaxed">
               <p>
                 I&apos;m a Frontend Developer at SurveySparrow specializing in
-                <span className="accent-text font-medium"> React</span>,{' '}
-                <span className="accent-text font-medium">Next.js</span>, and
+                <span className="font-semibold"> React</span>,{' '}
+                <span className="font-semibold">Next.js</span>, and
                 modern JavaScript frameworks. I build performant, scalable web
                 applications with clean code and exceptional user experiences.
               </p>
               <p>
                 My stack includes{' '}
-                <span className="accent-text font-medium">TypeScript</span>,{' '}
-                <span className="accent-text font-medium">Tailwind CSS</span>,{' '}
-                <span className="accent-text font-medium">Node.js</span>,
-                <span className="accent-text font-medium"> Redux/Zustand</span>,
+                <span className="font-semibold">TypeScript</span>,{' '}
+                <span className="font-semibold">Tailwind CSS</span>,{' '}
+                <span className="font-semibold">Node.js</span>,
+                <span className="font-semibold"> Redux/Zustand</span>,
                 and{' '}
-                <span className="accent-text font-medium">Tanstack Query</span>.
+                <span className="font-semibold">Tanstack Query</span>.
                 While frontend-focused, I also enjoy exploring backend
                 technologies and fullstack development. I&apos;m passionate
                 about optimization, accessibility, and delivering pixel-perfect
@@ -126,7 +152,7 @@ export default function Home() {
         id="socials"
         className="bg-background border-b soft-grid-border relative"
       >
-        <div className="max-w-2xl border-x soft-grid-border mx-auto relative">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto relative">
           <div className="p-8 flex items-center">
             <h2 className="text-xl font-bold text-foreground pr-6">Socials</h2>
             <div className="absolute top-0 bottom-0 left-[120px] w-px soft-grid-border"></div>
@@ -137,12 +163,9 @@ export default function Home() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-all duration-300 hover-accent-text hover:-translate-y-px hover:scale-110"
+                  className="text-foreground transition-all duration-300 hover:text-accent hover:-translate-y-px hover:scale-110"
                 >
-                  {getIcon(
-                    social.icon,
-                    'h-6 w-6 text-foreground transition-all duration-300 hover-accent-text hover:scale-110'
-                  )}
+                  {getIcon(social.icon, 'h-6 w-6')}
                 </a>
               ))}
             </div>

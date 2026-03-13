@@ -59,7 +59,7 @@ const Area51 = async () => {
       <Navigation currentPage="area51" showAdminLink={true} />
       <BinaryTitle word="Area51" />
       <div className="border-t border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">

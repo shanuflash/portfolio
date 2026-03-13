@@ -13,7 +13,7 @@ export default function ThemeToggle() {
     setMounted(true);
     const savedTheme = localStorage.getItem('theme');
 
-    setIsDark(savedTheme === 'dark');
+    setIsDark(savedTheme !== 'light');
   }, []);
 
   const toggleTheme = async () => {

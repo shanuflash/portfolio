@@ -28,7 +28,7 @@ const BlogCard = ({ post }) => (
         <span>{post.readTime}</span>
       </div>
     </div>
-    <h3 className="text-lg font-semibold text-foreground mb-2 hover-accent-text cursor-pointer">
+    <h3 className="text-lg font-semibold text-foreground mb-2 hover:text-accent cursor-pointer">
       {post.title}
     </h3>
     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -63,7 +63,7 @@ const Blog = async () => {
       <BinaryTitle word="Blog" />
       <SearchBar />
       <div className="border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           {posts.length > 0 ? (
             <div>
               {posts.map((post) => (
@@ -77,7 +77,7 @@ const Blog = async () => {
       </div>
       <DiagonalDivider />
       <div className="border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-6 text-center">
             <div className="flex justify-center gap-8 text-sm">
               <div>

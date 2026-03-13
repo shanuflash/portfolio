@@ -160,15 +160,15 @@ img::-webkit-selection {
   }
 
   .soft-grid-border {
-    @apply border-gray-200;
+    border-color: oklch(0.91 0.005 286);
   }
 
   .dark .soft-grid-border {
-    border-color: #404040;
+    border-color: oklch(0.3 0.005 286);
   }
 
   .profile-glow {
-    box-shadow: 0 0 20px rgba(var(--accent), 0.3);
+    box-shadow: 0 0 20px color-mix(in oklch, var(--accent) 30%, transparent);
   }
 }
 

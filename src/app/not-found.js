@@ -10,7 +10,7 @@ export default function NotFound() {
       <BinaryTitle word="404" />
 
       <div className="border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8 text-center space-y-6">
             <div className="space-y-4">
               <h1 className="text-4xl font-bold text-foreground">
@@ -46,13 +46,13 @@ export default function NotFound() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/"
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-foreground bg-background border soft-grid-border rounded-md transition-all duration-300 hover-accent-text hover:-translate-y-px hover:scale-105"
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-foreground bg-background border soft-grid-border rounded-md transition-all duration-300 hover:text-accent hover:-translate-y-px hover:scale-105"
                 >
                   Go Home
                 </Link>
                 <Link
                   href="/tools"
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-foreground bg-background border soft-grid-border rounded-md transition-all duration-300 hover-accent-text hover:-translate-y-px hover:scale-105"
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-foreground bg-background border soft-grid-border rounded-md transition-all duration-300 hover:text-accent hover:-translate-y-px hover:scale-105"
                 >
                   Browse Tools
                 </Link>

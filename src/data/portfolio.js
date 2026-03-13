@@ -282,7 +282,10 @@ export const projects = [
     name: 'NextLevel',
     status: 'Live',
     description: 'Personal Gaming Dashboard',
-    isWIP: false,
+    tagline: 'Track your gaming stats, achievements, and progress across platforms.',
+    image: '/projects/nextlevel.webp',
+    isDark: true,
+    size: 'large',
     isExternal: true,
   },
   {
@@ -291,7 +294,9 @@ export const projects = [
     name: 'InvoicEzz',
     status: 'Live',
     description: 'Minimalist Invoicing Tool',
-    isWIP: false,
+    tagline: 'Create and manage professional invoices in seconds.',
+    image: '/projects/invoicezz.webp',
+    size: 'medium',
     isExternal: true,
   },
   {
@@ -300,6 +305,10 @@ export const projects = [
     name: 'Whispr',
     status: 'Live',
     description: 'Real-time Chat Application',
+    tagline: 'Lightweight real-time messaging built with WebSockets.',
+    image: '/projects/whispr.webp',
+    isDark: true,
+    size: 'medium',
     isExternal: true,
   },
   {
@@ -308,6 +317,7 @@ export const projects = [
     name: 'FreeRam',
     status: 'Live',
     description: 'Lightweight RAM Optimization Tool',
+    size: 'small',
     isExternal: true,
   },
   {
@@ -316,6 +326,7 @@ export const projects = [
     name: 'React Attachment Kit',
     status: 'Live',
     description: 'React Component Library',
+    size: 'small',
     isExternal: true,
   },
   {
@@ -325,6 +336,7 @@ export const projects = [
     status: 'Live',
     description: 'Visual Tournament Bracket Builder',
     isWIP: true,
+    size: 'small',
     isExternal: true,
   },
 ];

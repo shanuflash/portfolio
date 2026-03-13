@@ -13,7 +13,7 @@ const BinaryTitle = ({ word }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="max-w-2xl border-x soft-grid-border mx-auto py-8 w-full">
+      <div className="max-w-4xl border-x soft-grid-border mx-auto py-8 w-full">
         <Tooltip>
           <TooltipTrigger asChild>
             <div

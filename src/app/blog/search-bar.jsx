@@ -7,7 +7,7 @@ const SearchBar = () => {
 
   return (
     <div className="border-b border-t soft-grid-border bg-background">
-      <div className="max-w-2xl border-x soft-grid-border mx-auto">
+      <div className="max-w-4xl border-x soft-grid-border mx-auto">
         <div className="p-6">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />

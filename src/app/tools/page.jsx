@@ -198,76 +198,81 @@ export const products = [
   // },
 ];
 
+function ToolGrid({ tools, isWipSection = false }) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2">
+      {tools.map((product, index) => {
+        const isRightColumn = index % 2 === 1;
+        const isInLastRow =
+          index >= tools.length - (tools.length % 2 === 0 ? 2 : 1);
+
+        let gridPosition = 'soft-grid-border';
+        if (!isInLastRow) gridPosition += ' border-b';
+        if (!isRightColumn) gridPosition += ' sm:border-r';
+
+        return (
+          <ProductCard
+            key={index}
+            product={{
+              ...product,
+              isWIP: isWipSection,
+              gridPosition,
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
 const Tools = () => {
+  const activeTools = products.filter((p) => !p.wip);
+  const wipTools = products.filter((p) => p.wip);
+
   return (
     <div className="min-h-screen font-mono bg-background">
       <Navigation currentPage="tools" />
       <BinaryTitle word="Tools" />
+
+      {/* Active tools */}
       <div className="border-b border-t soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto grid grid-cols-1 sm:grid-cols-2">
-          {products.map((product, index) => {
-            const isRightColumn = index % 2 === 1;
-
-            const isInLastRow =
-              index >= products.length - (products.length % 2 === 0 ? 2 : 1);
-
-            let gridPosition = 'soft-grid-border border-b';
-
-            if (!isInLastRow) {
-              gridPosition += ' sm:border-b';
-            }
-
-            if (!isRightColumn) {
-              gridPosition += ' sm:border-r';
-            }
-
-            if (isInLastRow) {
-              gridPosition += ' sm:border-b-0';
-            }
-
-            return (
-              <ProductCard
-                key={index}
-                product={{
-                  ...product,
-                  gridPosition,
-                }}
-              />
-            );
-          })}
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
+          <div className="p-8 pb-4">
+            <h2 className="text-xl font-bold text-foreground mb-4">Available</h2>
+          </div>
+          <div className="border-t soft-grid-border">
+            <ToolGrid tools={activeTools} />
+          </div>
         </div>
       </div>
+
       <DiagonalDivider />
+
+      {/* WIP tools */}
       <div className="border-b soft-grid-border bg-background">
-        <div className="max-w-2xl border-x soft-grid-border mx-auto">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
+          <div className="p-8 pb-4">
+            <h2 className="text-xl font-bold text-foreground mb-1">Coming Soon</h2>
+            <p className="text-xs text-muted-foreground">These are currently in progress.</p>
+          </div>
+          <div className="border-t soft-grid-border">
+            <ToolGrid tools={wipTools} isWipSection />
+          </div>
+        </div>
+      </div>
+
+      <DiagonalDivider />
+
+      <div className="border-b soft-grid-border bg-background">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8 text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 border-2 soft-grid-border rounded-full flex items-center justify-center bg-background">
-                <svg
-                  className="w-6 h-6 text-muted-foreground"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M12 4v16m8-8H4"
-                  />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">
-              More to come
-            </h3>
             <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
               These tools are based on things I frequently search for online. I
-              built them for easy access and you might find them useful too...
+              built them for easy access and you might find them useful too.
               <br />
               <br />
               If you think we should improve or add something new, feel free to
-              open an PR/Issue on the{' '}
+              open a PR/Issue on the{' '}
               <a
                 href="https://github.com/shanuflash/portfolio"
                 className="text-primary hover:underline"
