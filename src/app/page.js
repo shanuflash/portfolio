@@ -26,7 +26,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="flex-1 pl-6">
+            <div className="flex-1 px-6">
               <div className="flex items-center gap-2 mb-2">
                 <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
                   Shanu <span className="text-foreground/80">Sivakumar</span>

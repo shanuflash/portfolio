@@ -53,7 +53,7 @@ function CardInner({ project }) {
             <ImageFrame
               src={image}
               alt={name}
-              aspect="aspect-3/1"
+              aspect="aspect-2/1 sm:aspect-3/1"
               sizes="(max-width: 672px) 100vw, 640px"
               position={imagePosition}
               isDark={isDarkImage}
@@ -103,7 +103,7 @@ function CardInner({ project }) {
             <ImageFrame
               src={image}
               alt={name}
-              aspect="aspect-2/1"
+              aspect="aspect-5/2 sm:aspect-2/1"
               sizes="(max-width: 672px) 100vw, 320px"
               position={imagePosition}
               isDark={isDarkImage}
