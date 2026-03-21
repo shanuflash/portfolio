@@ -150,9 +150,8 @@ img::-webkit-selection {
   body {
     @apply text-foreground bg-background;
     background-image:
-      radial-gradient(ellipse 80% 60% at 10% 0%, color-mix(in oklch, var(--accent) var(--mesh-intensity), transparent) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 50% at 90% 100%, color-mix(in oklch, var(--accent) var(--mesh-intensity-half), transparent) 0%, transparent 70%);
-    background-attachment: fixed;
+      radial-gradient(ellipse 120% 40% at 50% -10%, color-mix(in oklch, var(--accent) var(--mesh-intensity), transparent) 0%, transparent 70%),
+      radial-gradient(ellipse 120% 35% at 50% 100%, color-mix(in oklch, var(--accent) var(--mesh-intensity-half), transparent) 0%, transparent 70%);
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
   }
