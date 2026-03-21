@@ -1,7 +1,6 @@
 'use client';
 
 import Navigation from '@/components/navigation';
-import BinaryTitle from '@/components/binary-title';
 import DiagonalDivider from '@/components/diagonal-divider';
 import { useState, useMemo } from 'react';
 
@@ -80,9 +79,15 @@ const CharCount = () => {
   return (
     <div className="min-h-screen font-mono bg-background">
       <Navigation currentPage="tools" />
-      <BinaryTitle word="Character Counter" />
 
-      <div className="border-b border-t soft-grid-border bg-background">
+      <div className="border-b soft-grid-border bg-background">
+        <div className="max-w-4xl border-x soft-grid-border mx-auto">
+          <div className="px-6 py-4">
+            <h1 className="text-xl font-bold text-foreground">Character Counter</h1>
+          </div>
+        </div>
+      </div>
+      <div className="border-b soft-grid-border bg-background">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-6">
             <div className="space-y-6">

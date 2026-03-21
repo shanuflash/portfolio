@@ -1,8 +1,9 @@
 import Navigation from '@/components/navigation';
-import BinaryTitle from '@/components/binary-title';
 import DiagonalDivider from '@/components/diagonal-divider';
 import SearchBar from './search-bar';
 import { FileText } from 'lucide-react';
+import { getIcon } from '@/components/icon-mapper';
+import { socialLinks, contactEmail } from '@/data/portfolio';
 
 export const metadata = {
   title: 'Blog | Shanu Sivakumar',
@@ -60,7 +61,6 @@ const Blog = async () => {
   return (
     <div className="min-h-screen font-mono bg-background">
       <Navigation currentPage="blog" />
-      <BinaryTitle word="Blog" />
       <SearchBar />
       <div className="border-b soft-grid-border bg-background">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
@@ -76,31 +76,32 @@ const Blog = async () => {
         </div>
       </div>
       <DiagonalDivider />
-      <div className="border-b soft-grid-border bg-background">
+      <div className="bg-background border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-6 text-center">
-            <div className="flex justify-center gap-8 text-sm">
-              <div>
-                <div className="text-lg font-semibold text-foreground">
-                  {posts.length}
-                </div>
-                <div className="text-muted-foreground">Posts</div>
-              </div>
-              <div>
-                <div className="text-lg font-semibold text-foreground">
-                  {categories.length}
-                </div>
-                <div className="text-muted-foreground">Categories</div>
-              </div>
-              <div>
-                <div className="text-lg font-semibold text-foreground">
-                  {posts.reduce(
-                    (acc, post) => acc + parseInt(post.readTime || '0'),
-                    0
-                  )}
-                </div>
-                <div className="text-muted-foreground">Min read</div>
-              </div>
+          <div className="p-8">
+            <h2 className="text-xl font-bold text-foreground mb-2">
+              Let&apos;s build something together
+            </h2>
+            <div className="flex items-center gap-4 mt-1">
+              <a
+                href={`mailto:${contactEmail}`}
+                className="text-sm text-accent hover:underline transition-colors"
+              >
+                {contactEmail}
+              </a>
+            </div>
+            <div className="flex items-center gap-8 mt-6 pt-6 border-t soft-grid-border">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground transition-all duration-300 hover:text-accent hover:-translate-y-px hover:scale-110"
+                >
+                  {getIcon(social.icon, 'h-6 w-6')}
+                </a>
+              ))}
             </div>
           </div>
         </div>

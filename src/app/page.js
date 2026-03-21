@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen font-mono bg-background">
       <Navigation currentPage="home" />
-      <div className="border-t border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border bg-background">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="flex items-center gap-4 px-5 py-4 sm:px-6 sm:py-5">
             <div className="shrink-0">

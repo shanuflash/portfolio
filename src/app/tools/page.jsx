@@ -1,7 +1,8 @@
 import ProductCard from '@/components/product-card';
-import BinaryTitle from '@/components/binary-title';
 import DiagonalDivider from '@/components/diagonal-divider';
 import Navigation from '@/components/navigation';
+import { getIcon } from '@/components/icon-mapper';
+import { socialLinks, contactEmail } from '@/data/portfolio';
 
 export const metadata = {
   title: 'Tools | Shanu Sivakumar',
@@ -232,55 +233,63 @@ const Tools = () => {
   return (
     <div className="min-h-screen font-mono bg-background">
       <Navigation currentPage="tools" />
-      <BinaryTitle word="Tools" />
 
-      {/* Active tools */}
-      <div className="border-b border-t soft-grid-border bg-background">
+      <div className="border-b soft-grid-border bg-background">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-8 pb-4">
-            <h2 className="text-xl font-bold text-foreground mb-4">Available</h2>
-          </div>
-          <div className="border-t soft-grid-border">
-            <ToolGrid tools={activeTools} />
+          <div className="p-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Tools</h2>
+            <div className="border soft-grid-border rounded-lg overflow-hidden">
+              <ToolGrid tools={activeTools} />
+            </div>
+
+            <h3 className="text-sm font-semibold text-muted-foreground mt-8 mb-3">Coming Soon</h3>
+            <div className="border soft-grid-border rounded-lg overflow-hidden">
+              <ToolGrid tools={wipTools} isWipSection />
+            </div>
           </div>
         </div>
       </div>
 
       <DiagonalDivider />
 
-      {/* WIP tools */}
-      <div className="border-b soft-grid-border bg-background">
+      <div className="bg-background border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-8 pb-4">
-            <h2 className="text-xl font-bold text-foreground mb-1">Coming Soon</h2>
-            <p className="text-xs text-muted-foreground">These are currently in progress.</p>
-          </div>
-          <div className="border-t soft-grid-border">
-            <ToolGrid tools={wipTools} isWipSection />
-          </div>
-        </div>
-      </div>
-
-      <DiagonalDivider />
-
-      <div className="border-b soft-grid-border bg-background">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-8 text-center">
-            <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-              These tools are based on things I frequently search for online. I
-              built them for easy access and you might find them useful too.
-              <br />
-              <br />
-              If you think we should improve or add something new, feel free to
-              open a PR/Issue on the{' '}
+          <div className="p-8">
+            <h2 className="text-xl font-bold text-foreground mb-2">
+              Have a tool idea?
+            </h2>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
+              These tools are based on things I frequently search for online.
+              If you think we should add something new, feel free to open a PR/Issue on the{' '}
               <a
                 href="https://github.com/shanuflash/portfolio"
-                className="text-primary hover:underline"
+                className="text-accent hover:underline"
               >
                 GitHub repo
               </a>
               .
             </p>
+            <div className="flex items-center gap-4 mt-4">
+              <a
+                href={`mailto:${contactEmail}`}
+                className="text-sm text-accent hover:underline transition-colors"
+              >
+                {contactEmail}
+              </a>
+            </div>
+            <div className="flex items-center gap-8 mt-6 pt-6 border-t soft-grid-border">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground transition-all duration-300 hover:text-accent hover:-translate-y-px hover:scale-110"
+                >
+                  {getIcon(social.icon, 'h-6 w-6')}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

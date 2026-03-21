@@ -24,7 +24,7 @@ export default function ProductCard({ product }) {
 
   const cardContent = (
     <div
-      className={`flex items-center justify-between p-4 transition-colors relative ${
+      className={`flex items-center justify-between px-4 py-5 transition-colors relative ${
         isWIP
           ? 'opacity-40 cursor-not-allowed'
           : 'hover:bg-muted/50'
@@ -32,15 +32,15 @@ export default function ProductCard({ product }) {
     >
       <div className="flex items-center gap-3">
         <div
-          className={`h-10 w-10 rounded-sm flex items-center justify-center relative ${
+          className={`h-10 w-10 shrink-0 rounded-md flex items-center justify-center relative ${
             isWIP
               ? 'bg-muted/20 border border-dashed border-muted-foreground/30'
-              : 'bg-muted/30'
+              : 'bg-accent/10'
           }`}
         >
           {getIcon(
             iconName,
-            `h-6 w-6 ${isWIP ? 'text-muted-foreground' : 'text-foreground'}`
+            `h-5 w-5 ${isWIP ? 'text-muted-foreground' : 'text-accent'}`
           )}
           {isWIP && (
             <div className="absolute -top-1 -right-1 bg-background border border-muted-foreground/30 rounded-full p-0.5">
@@ -67,7 +67,7 @@ export default function ProductCard({ product }) {
         </div>
       </div>
       {!isWIP && (
-        <ArrowRight className="w-4 h-4 text-muted-foreground" />
+        <ArrowRight className="w-4 h-4 shrink-0 text-muted-foreground" />
       )}
     </div>
   );
