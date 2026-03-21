@@ -8,10 +8,10 @@ const positionMap = {
   bottom: 'object-bottom',
 };
 
-function ImageFrame({ src, alt, aspect = 'aspect-2/1', sizes, position = 'top', isDark = false }) {
+function ImageFrame({ src, alt, aspect = 'aspect-2/1', sizes, position = 'top', isDark = false, href }) {
   const objectPosition = positionMap[position] || 'object-top';
 
-  return (
+  const inner = (
     <div
       className={`relative w-full ${aspect} overflow-hidden`}
     >
@@ -30,6 +30,37 @@ function ImageFrame({ src, alt, aspect = 'aspect-2/1', sizes, position = 'top', 
       }`} />
     </div>
   );
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        {inner}
+      </a>
+    );
+  }
+
+  return inner;
+}
+
+function TitleRow({ iconName, name, href, iconSize = 'h-3.5 w-3.5', boxSize = 'h-6 w-6' }) {
+  const content = (
+    <div className="flex items-center gap-2">
+      <div className={`${boxSize} rounded-md bg-accent/10 flex items-center justify-center shrink-0`}>
+        {getIcon(iconName, `${iconSize} text-accent`)}
+      </div>
+      <h3 className="text-sm font-bold text-foreground">{name}</h3>
+    </div>
+  );
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
 }
 
 function ActionLinks({ project }) {
@@ -74,7 +105,11 @@ function CardInner({ project }) {
     imagePosition = 'top',
     size = 'small',
     isWIP = false,
+    liveUrl,
+    sourceUrl,
   } = project;
+
+  const href = !isWIP ? (liveUrl || sourceUrl) : undefined;
 
   if (size === 'large') {
     return (
@@ -88,12 +123,12 @@ function CardInner({ project }) {
               sizes="(max-width: 672px) 100vw, 640px"
               position={imagePosition}
               isDark={isDarkImage}
+              href={href}
             />
             <div className="px-4 py-3">
               <div className="min-w-0">
-                <div className="flex items-center gap-2 mb-0.5">
-                  {getIcon(iconName, 'h-4 w-4 text-foreground shrink-0')}
-                  <h3 className="text-sm font-bold text-foreground">{name}</h3>
+                <div className="mb-0.5">
+                  <TitleRow iconName={iconName} name={name} href={href} />
                 </div>
                 <p className="text-xs text-muted-foreground font-light">
                   {tagline || description}
@@ -138,12 +173,12 @@ function CardInner({ project }) {
               sizes="(max-width: 672px) 100vw, 320px"
               position={imagePosition}
               isDark={isDarkImage}
+              href={href}
             />
             <div className="px-4 py-3">
               <div className="min-w-0">
-                <div className="flex items-center gap-2 mb-0.5">
-                  {getIcon(iconName, 'h-4 w-4 text-foreground shrink-0')}
-                  <h3 className="text-sm font-bold text-foreground">{name}</h3>
+                <div className="mb-0.5">
+                  <TitleRow iconName={iconName} name={name} href={href} />
                 </div>
                 <p className="text-xs text-muted-foreground font-light line-clamp-2 min-h-[2lh]">
                   {tagline || description}
@@ -180,20 +215,36 @@ function CardInner({ project }) {
     <div
       className={`group relative h-full ${isWIP ? 'opacity-60' : ''}`}
     >
-      <div className="px-4 py-3 flex items-start justify-between gap-2">
-        <div className="min-w-0">
-          <div className="flex items-center gap-2 mb-0.5">
+      <div className="px-4 py-3 flex items-start gap-3">
+        {href ? (
+          <a href={href} target="_blank" rel="noopener noreferrer" className="shrink-0 mt-0.5 hover:opacity-80 transition-opacity">
+            <div className="h-8 w-8 rounded-md bg-accent/10 flex items-center justify-center">
+              {getIcon(iconName, 'h-4 w-4 text-accent')}
+            </div>
+          </a>
+        ) : (
+          <div className={`h-8 w-8 rounded-md flex items-center justify-center shrink-0 mt-0.5 ${isWIP ? 'bg-muted/20' : 'bg-accent/10'}`}>
             {getIcon(
               iconName,
-              `h-4 w-4 shrink-0 ${isWIP ? 'text-muted-foreground/60' : 'text-foreground'}`
+              `h-4 w-4 ${isWIP ? 'text-muted-foreground/60' : 'text-accent'}`
             )}
-            <h3
-              className={`text-sm font-bold ${
-                isWIP ? 'text-muted-foreground/80' : 'text-foreground'
-              }`}
-            >
-              {name}
-            </h3>
+          </div>
+        )}
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 mb-0.5">
+            {href ? (
+              <a href={href} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <h3 className="text-sm font-bold text-foreground">{name}</h3>
+              </a>
+            ) : (
+              <h3
+                className={`text-sm font-bold ${
+                  isWIP ? 'text-muted-foreground/80' : 'text-foreground'
+                }`}
+              >
+                {name}
+              </h3>
+            )}
             {isWIP && (
               <span className="text-[10px] px-1 py-0.5 bg-muted/40 text-muted-foreground/70 rounded border border-dashed border-muted-foreground/20 shrink-0">
                 WIP

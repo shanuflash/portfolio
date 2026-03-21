@@ -85,7 +85,7 @@ export default function Home() {
                 packages, desktop apps — either to solve a problem
                 I&apos;m facing or because an idea felt too cool not to build.
               </p>
-              <div className="space-y-3">
+              <div className="space-y-5">
                 {[
                   { label: 'Languages', items: ['TypeScript', 'JavaScript', 'C#', 'HTML', 'CSS', 'Sass'] },
                   { label: 'Frameworks & Libraries', items: ['Next.js', 'React', 'Tailwind CSS', 'Tanstack Query', 'Drizzle ORM', 'Redux Toolkit', 'Radix UI', 'Better Auth', 'Zustand', 'Ably'] },
@@ -93,7 +93,7 @@ export default function Home() {
                   { label: 'Databases & Services', items: ['PostgreSQL', 'SQLite', 'AWS S3', 'Turso', 'Cloudinary', 'Supabase', 'MongoDB'] },
                 ].map((group) => (
                   <div key={group.label}>
-                    <h3 className="text-sm font-semibold text-foreground mb-1.5">{group.label}</h3>
+                    <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{group.label}</h3>
                     <div className="flex flex-wrap gap-1.5">
                       {group.items.map((skill) => {
                         const isFeatured = featuredSkills.includes(skill);
