@@ -278,6 +278,8 @@ export const products = [
 export const projects = [
   {
     href: 'https://nextlevel.shanu.dev',
+    liveUrl: 'https://nextlevel.shanu.dev',
+    sourceUrl: 'https://github.com/shanuflash/nextlevel',
     icon: 'Gamepad2',
     name: 'NextLevel',
     status: 'Live',
@@ -290,6 +292,8 @@ export const projects = [
   },
   {
     href: 'https://invoicezz.shanu.dev',
+    liveUrl: 'https://invoicezz.shanu.dev',
+    sourceUrl: 'https://github.com/shanuflash/invoicezz',
     icon: 'FileText',
     name: 'InvoicEzz',
     status: 'Live',
@@ -301,6 +305,8 @@ export const projects = [
   },
   {
     href: 'https://whispr.shanu.dev',
+    liveUrl: 'https://whispr.shanu.dev',
+    sourceUrl: 'https://github.com/shanuflash/whispr',
     icon: 'MessageSquare',
     name: 'Whispr',
     status: 'Live',
@@ -313,6 +319,8 @@ export const projects = [
   },
   {
     href: 'https://www.npmjs.com/package/react-attachment-kit',
+    liveUrl: 'https://www.npmjs.com/package/react-attachment-kit',
+    sourceUrl: 'https://github.com/shanuflash/react-attachment-kit',
     icon: 'Paperclip',
     name: 'React Attachment Kit',
     status: 'Live',
@@ -322,6 +330,7 @@ export const projects = [
   },
   {
     href: 'https://github.com/shanuflash/freeram',
+    sourceUrl: 'https://github.com/shanuflash/freeram',
     icon: 'MemoryStick',
     name: 'FreeRam',
     status: 'Live',
@@ -331,6 +340,8 @@ export const projects = [
   },
   {
     href: 'https://laddr.shanu.dev',
+    liveUrl: 'https://laddr.shanu.dev',
+    sourceUrl: 'https://github.com/shanuflash/laddr',
     icon: 'Trophy',
     name: 'Laddr',
     status: 'Live',
@@ -340,6 +351,10 @@ export const projects = [
     isExternal: true,
   },
 ];
+
+export const featuredSkills = ['TypeScript', 'Next.js', 'React', 'PostgreSQL'];
+
+export const contactEmail = 'hello@shanu.dev';
 
 export const socialLinks = [
   {

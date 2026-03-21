@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowUpRight, Lock } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { getIcon } from '@/components/icon-mapper';
 
 const positionMap = {
@@ -32,6 +32,37 @@ function ImageFrame({ src, alt, aspect = 'aspect-2/1', sizes, position = 'top', 
   );
 }
 
+function ActionLinks({ project }) {
+  const { liveUrl, sourceUrl } = project;
+  if (!liveUrl && !sourceUrl) return null;
+  return (
+    <div className="flex items-center gap-3 mt-1.5">
+      {liveUrl && (
+        <a
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-accent transition-colors"
+        >
+          <ExternalLink className="w-3 h-3" />
+          Live Demo
+        </a>
+      )}
+      {sourceUrl && (
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-accent transition-colors"
+        >
+          <Github className="w-3 h-3" />
+          Source
+        </a>
+      )}
+    </div>
+  );
+}
+
 function CardInner({ project }) {
   const {
     icon: iconName,
@@ -58,7 +89,7 @@ function CardInner({ project }) {
               position={imagePosition}
               isDark={isDarkImage}
             />
-            <div className="px-4 py-3 flex items-start justify-between gap-3">
+            <div className="px-4 py-3">
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
                   {getIcon(iconName, 'h-4 w-4 text-foreground shrink-0')}
@@ -67,8 +98,8 @@ function CardInner({ project }) {
                 <p className="text-xs text-muted-foreground font-light">
                   {tagline || description}
                 </p>
+                <ActionLinks project={project} />
               </div>
-              <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-1 transition-all duration-300 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </div>
           </>
         )}
@@ -88,7 +119,7 @@ function CardInner({ project }) {
                 {tagline}
               </p>
             )}
-            <ArrowUpRight className="absolute top-5 right-5 w-4 h-4 text-muted-foreground transition-all duration-300 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ActionLinks project={project} />
           </div>
         )}
       </div>
@@ -103,12 +134,12 @@ function CardInner({ project }) {
             <ImageFrame
               src={image}
               alt={name}
-              aspect="aspect-5/2 sm:aspect-2/1"
+              aspect="aspect-3/2 sm:aspect-5/2"
               sizes="(max-width: 672px) 100vw, 320px"
               position={imagePosition}
               isDark={isDarkImage}
             />
-            <div className="px-4 py-3 flex items-start justify-between gap-2">
+            <div className="px-4 py-3">
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
                   {getIcon(iconName, 'h-4 w-4 text-foreground shrink-0')}
@@ -117,8 +148,8 @@ function CardInner({ project }) {
                 <p className="text-xs text-muted-foreground font-light line-clamp-2 min-h-[2lh]">
                   {tagline || description}
                 </p>
+                <ActionLinks project={project} />
               </div>
-              <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-1 transition-all duration-300 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </div>
           </>
         )}
@@ -138,7 +169,7 @@ function CardInner({ project }) {
                 {tagline}
               </p>
             )}
-            <ArrowUpRight className="absolute top-4 right-4 w-3.5 h-3.5 text-muted-foreground transition-all duration-300 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ActionLinks project={project} />
           </div>
         )}
       </div>
@@ -172,21 +203,15 @@ function CardInner({ project }) {
           <p className="text-xs text-muted-foreground font-light line-clamp-2 min-h-[2lh]">
             {description}
           </p>
+          {!isWIP && <ActionLinks project={project} />}
         </div>
-        {!isWIP && (
-          <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-1 transition-all duration-300 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        )}
       </div>
     </div>
   );
 }
 
 export default function BentoCard({ project }) {
-  const { href, isWIP = false, isExternal = false } = project;
-
-  const linkProps = isExternal
-    ? { target: '_blank', rel: 'noopener noreferrer' }
-    : { rel: 'noopener noreferrer' };
+  const { isWIP = false } = project;
 
   if (isWIP) {
     return (
@@ -197,12 +222,8 @@ export default function BentoCard({ project }) {
   }
 
   return (
-    <a
-      href={href}
-      {...linkProps}
-      className="block transition-colors hover:bg-muted/20"
-    >
+    <div className="transition-colors hover:bg-muted/20">
       <CardInner project={project} />
-    </a>
+    </div>
   );
 }
