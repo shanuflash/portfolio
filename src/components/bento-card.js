@@ -16,7 +16,7 @@ function ImageFrame({ src, alt, aspect = 'aspect-2/1', sizes, position = 'top', 
       className={`relative w-full ${aspect} overflow-hidden`}
     >
       <Image
-        src={`${src}?v=${Date.now()}`}
+        src={src}
         alt={alt}
         fill
         unoptimized

@@ -12,8 +12,8 @@ export default function Home() {
       <Navigation currentPage="home" />
       <div className="border-t border-b soft-grid-border bg-background">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="flex items-center gap-4 p-0">
-            <div className="flex border-r h-full justify-center items-center p-2 soft-grid-border">
+          <div className="flex flex-col sm:flex-row items-center gap-4 p-0">
+            <div className="flex border-b sm:border-b-0 sm:border-r h-full w-full sm:w-auto justify-center items-center p-4 sm:px-6 sm:py-5 soft-grid-border">
               <div className="w-24 h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
                 <Image
                   width={96}
@@ -25,8 +25,8 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="flex-1 px-6">
-              <div className="flex items-center gap-2 mb-1">
+            <div className="flex-1 px-6 py-4 sm:py-4 text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
                 <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
                   Shanu <span className="text-foreground/80">Sivakumar</span>
                 </h1>
