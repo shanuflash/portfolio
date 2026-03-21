@@ -1,6 +1,6 @@
 export default function DiagonalDivider() {
   return (
-    <div className="border-b soft-grid-border h-10 bg-background">
+    <div className="border-b soft-grid-border h-10">
       <div
         className="max-w-4xl border-x soft-grid-border mx-auto h-full"
         style={{

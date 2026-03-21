@@ -5,11 +5,11 @@ import DiagonalDivider from '@/components/diagonal-divider';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen font-mono bg-background">
+    <div className="min-h-screen font-mono">
       <Navigation />
       <BinaryTitle word="404" />
 
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8 text-center space-y-6">
             <div className="space-y-4">

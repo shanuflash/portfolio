@@ -231,10 +231,10 @@ const Tools = () => {
   const wipTools = products.filter((p) => p.wip);
 
   return (
-    <div className="min-h-screen font-mono bg-background">
+    <div className="min-h-screen font-mono">
       <Navigation currentPage="tools" />
 
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <h2 className="text-xl font-bold text-foreground mb-6">Tools</h2>
@@ -252,7 +252,7 @@ const Tools = () => {
 
       <DiagonalDivider />
 
-      <div className="bg-background border-b soft-grid-border">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <h2 className="text-xl font-bold text-foreground mb-2">

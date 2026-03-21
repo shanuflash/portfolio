@@ -16,7 +16,7 @@ export default function ExpandableProductsSection({ products }) {
   return (
     <div
       id="products"
-      className="border-b border-border soft-grid-border bg-background"
+      className="border-b border-border soft-grid-border"
     >
       <div className="max-w-4xl border-x soft-grid-border mx-auto">
         <div className="p-6">

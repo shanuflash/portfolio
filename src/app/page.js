@@ -8,9 +8,9 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-mono bg-background">
+    <div className="relative min-h-screen font-mono">
       <Navigation currentPage="home" />
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="flex items-center gap-4 px-5 py-4 sm:px-6 sm:py-5">
             <div className="shrink-0">
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </div>
       <DiagonalDivider />
-      <div id="about" className="border-b soft-grid-border bg-background">
+      <div id="about" className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <h2 className="text-xl font-bold text-foreground mb-6">About</h2>
@@ -124,7 +124,7 @@ export default function Home() {
         </div>
       </div>
       <DiagonalDivider />
-      <div id="projects" className="border-b soft-grid-border bg-background">
+      <div id="projects" className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <h2 className="text-xl font-bold text-foreground mb-6">Projects</h2>
@@ -183,7 +183,7 @@ export default function Home() {
       <DiagonalDivider />
       <div
         id="socials"
-        className="bg-background border-b soft-grid-border relative"
+        className="border-b soft-grid-border relative"
       >
         <div className="max-w-4xl border-x soft-grid-border mx-auto relative">
           <div className="p-8">

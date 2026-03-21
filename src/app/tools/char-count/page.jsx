@@ -77,17 +77,17 @@ const CharCount = () => {
   };
 
   return (
-    <div className="min-h-screen font-mono bg-background">
+    <div className="min-h-screen font-mono">
       <Navigation currentPage="tools" />
 
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="px-6 py-4">
             <h1 className="text-xl font-bold text-foreground">Character Counter</h1>
           </div>
         </div>
       </div>
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-6">
             <div className="space-y-6">
@@ -171,7 +171,7 @@ const CharCount = () => {
 
       <DiagonalDivider />
 
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-6">
             <h2 className="text-lg font-semibold text-foreground mb-4">
@@ -207,7 +207,7 @@ const CharCount = () => {
 
       {/* Word Frequency Section */}
 
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-6">
             <h2 className="text-lg font-semibold text-foreground mb-4">

@@ -59,10 +59,10 @@ const Blog = async () => {
   const categories = await getCategories();
 
   return (
-    <div className="min-h-screen font-mono bg-background">
+    <div className="min-h-screen font-mono">
       <Navigation currentPage="blog" />
       <SearchBar />
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           {posts.length > 0 ? (
             <div>
@@ -76,7 +76,7 @@ const Blog = async () => {
         </div>
       </div>
       <DiagonalDivider />
-      <div className="bg-background border-b soft-grid-border">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <h2 className="text-xl font-bold text-foreground mb-2">

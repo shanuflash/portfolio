@@ -63,6 +63,8 @@ img::-webkit-selection {
 
 :root {
   --radius: 0.625rem;
+  --mesh-intensity: 35%;
+  --mesh-intensity-half: 17.5%;
   --background: oklch(0.97 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -97,6 +99,8 @@ img::-webkit-selection {
 }
 
 .dark {
+  --mesh-intensity: 15%;
+  --mesh-intensity-half: 8%;
   --background: oklch(0.071 0.004 285.823);
   --foreground: oklch(0.96 0.002 285.823);
   --accent: #60a5fa;
@@ -144,7 +148,11 @@ img::-webkit-selection {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground bg-background;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 10% 0%, color-mix(in oklch, var(--accent) var(--mesh-intensity), transparent) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 90% 100%, color-mix(in oklch, var(--accent) var(--mesh-intensity-half), transparent) 0%, transparent 70%);
+    background-attachment: fixed;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
   }

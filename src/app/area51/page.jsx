@@ -54,9 +54,9 @@ const Area51 = async () => {
   });
 
   return (
-    <div className="min-h-screen font-mono bg-background">
+    <div className="min-h-screen font-mono">
       <Navigation currentPage="area51" showAdminLink={true} />
-      <div className="border-b soft-grid-border bg-background">
+      <div className="border-b soft-grid-border">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
           <div className="p-8">
             <div className="flex items-center justify-between mb-6">

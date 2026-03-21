@@ -6,7 +6,7 @@ const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
-    <div className="border-b border-t soft-grid-border bg-background">
+    <div className="border-b border-t soft-grid-border">
       <div className="max-w-4xl border-x soft-grid-border mx-auto">
         <div className="p-6">
           <div className="relative">
