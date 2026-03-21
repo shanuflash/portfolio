@@ -1,3 +1,4 @@
+import { Briefcase } from 'lucide-react';
 import {
   Type,
   FileText,
@@ -66,6 +67,7 @@ const iconMap = {
   MemoryStick,
   Trophy,
   MapPin,
+  Briefcase
 };
 
 export function getIcon(iconName, className = '') {

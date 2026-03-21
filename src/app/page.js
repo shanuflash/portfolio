@@ -12,9 +12,9 @@ export default function Home() {
       <Navigation currentPage="home" />
       <div className="border-t border-b soft-grid-border bg-background">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="flex flex-col sm:flex-row items-center gap-4 p-0">
-            <div className="flex border-b sm:border-b-0 sm:border-r h-full w-full sm:w-auto justify-center items-center p-4 sm:px-6 sm:py-5 soft-grid-border">
-              <div className="w-24 h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
+          <div className="flex items-center gap-4 px-5 py-4 sm:px-6 sm:py-5">
+            <div className="shrink-0">
+              <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
                 <Image
                   width={96}
                   height={96}
@@ -25,27 +25,31 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="flex-1 px-6 py-4 sm:py-4 text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
-                <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-                  Shanu <span className="text-foreground/80">Sivakumar</span>
-                </h1>
-              </div>
-              <p className="text-base text-muted-foreground font-light">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-xl sm:text-3xl font-bold text-foreground leading-tight">
+                Shanu <span className="text-foreground/80">Sivakumar</span>
+              </h1>
+              <p className="text-sm sm:text-base text-muted-foreground font-light mt-1">
                 Full Stack Engineer, crafting{' '}
                 <span className="text-foreground/80 font-medium">
                   real-time, data-rich web products
                 </span>
                 .
               </p>
-              <p className="text-xs text-muted-foreground/50 mt-2">
-                Building cool stuff @{' '}
-                <span className="text-accent/75 font-medium">SurveySparrow</span>
-                {' '}since 2023
-              </p>
             </div>
           </div>
-          <div className="border-t soft-grid-border px-4 py-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <div className="border-t soft-grid-border px-5 pt-3 pb-1.5 sm:px-6 flex items-start sm:items-center gap-2">
+            <div
+              className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-0.5 sm:mt-0"
+              aria-hidden="true"
+            >
+              {getIcon('Briefcase', 'w-3.5 h-3.5 text-muted-foreground')}
+            </div>
+            <span className="text-xs text-muted-foreground">
+              Building cool stuff @ <span className="text-accent/75 font-medium">SurveySparrow</span> since 2023
+            </span>
+          </div>
+          <div className="px-5 pb-3 sm:px-6 grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-x-5 gap-y-2">
             {infoItems.map((item) => {
               const iconElement =
                 typeof item.icon === 'string'
@@ -54,12 +58,12 @@ export default function Home() {
               return (
                 <div key={item.id} className="flex items-center gap-2">
                   <div
-                    className="w-3.5 h-3.5 text-muted-foreground"
+                    className="w-3.5 h-3.5 text-muted-foreground shrink-0"
                     aria-hidden="true"
                   >
                     {iconElement}
                   </div>
-                  <span className="text-xs text-muted-foreground transition-all duration-300 hover:text-foreground">
+                  <span className="text-xs text-muted-foreground transition-all duration-300 hover:text-foreground truncate">
                     {item.content}
                   </span>
                 </div>
