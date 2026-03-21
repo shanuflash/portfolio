@@ -5,7 +5,7 @@ export default function Navigation({ currentPage, showAdminLink = false }) {
   const navLinks = [
     { href: '/', text: 'Home', isActive: currentPage === 'home' },
     { href: '/tools', text: 'Tools', isActive: currentPage === 'tools' },
-    { href: '/blog', text: 'Blog', isActive: currentPage === 'blog' },
+    // { href: '/blog', text: 'Blog', isActive: currentPage === 'blog' },
   ];
 
   if (showAdminLink) {

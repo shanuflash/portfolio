@@ -33,9 +33,9 @@ export default function Home() {
                 </h1>
               </div>
               <p className="text-base text-muted-foreground font-light">
-                Full-stack curious,{' '}
+                Full Stack Engineer,{' '}
                 <span className="text-foreground/80 font-medium">
-                  frontend obsessed
+                  building end-to-end
                 </span>
                 .
               </p>
@@ -126,14 +126,15 @@ export default function Home() {
               <p>
                 I&apos;m a Full Stack Engineer specializing in building
                 performant, scalable web applications. I architect end-to-end
-                systems, bridging robust backend infrastructure with exceptional
-                user experiences.
+                systems — from ground-up mobile-web platforms and real-time
+                server-state orchestration to enterprise security
+                infrastructure.
               </p>
               <p>
                 From designing complex data schemas and APIs to delivering
-                pixel-perfect, accessible interfaces, I&apos;m passionate about
-                writing clean code and shipping highly optimized products that
-                users love to interact with.
+                pixel-perfect, accessible interfaces, I focus on shipping
+                highly optimized products that hold up at scale and feel great
+                to use.
               </p>
               <div className="space-y-3">
                 {[
