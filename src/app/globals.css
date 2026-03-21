@@ -170,6 +170,27 @@ img::-webkit-selection {
   .profile-glow {
     box-shadow: 0 0 20px color-mix(in oklch, var(--accent) 30%, transparent);
   }
+
+  .accent-gradient-text {
+    background-image: linear-gradient(
+      90deg,
+      var(--accent),
+      color-mix(in oklch, var(--accent) 40%, oklch(0.65 0.25 310)),
+      color-mix(in oklch, var(--accent) 30%, oklch(0.7 0.2 190)),
+      color-mix(in oklch, var(--accent) 50%, oklch(0.6 0.22 280)),
+      var(--accent)
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: accent-shift 3s linear infinite;
+  }
+}
+
+@keyframes accent-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
 
 ::view-transition-old(root),

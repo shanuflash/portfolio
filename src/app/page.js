@@ -124,25 +124,40 @@ export default function Home() {
             <h2 className="text-xl font-bold text-foreground mb-6">About</h2>
             <div className="space-y-5 text-sm text-foreground leading-relaxed">
               <p>
-                I&apos;m a Frontend Developer at SurveySparrow specializing in
-                <span className="font-semibold"> React</span>,{' '}
-                <span className="font-semibold">Next.js</span>, and
-                modern JavaScript frameworks. I build performant, scalable web
-                applications with clean code and exceptional user experiences.
+                I&apos;m a Full Stack Engineer specializing in building
+                performant, scalable web applications. I architect end-to-end
+                systems, bridging robust backend infrastructure with exceptional
+                user experiences.
               </p>
               <p>
-                My stack includes{' '}
-                <span className="font-semibold">TypeScript</span>,{' '}
-                <span className="font-semibold">Tailwind CSS</span>,{' '}
-                <span className="font-semibold">Node.js</span>,
-                <span className="font-semibold"> Redux/Zustand</span>,
-                and{' '}
-                <span className="font-semibold">Tanstack Query</span>.
-                While frontend-focused, I also enjoy exploring backend
-                technologies and fullstack development. I&apos;m passionate
-                about optimization, accessibility, and delivering pixel-perfect
-                interfaces that users love to interact with.
+                From designing complex data schemas and APIs to delivering
+                pixel-perfect, accessible interfaces, I&apos;m passionate about
+                writing clean code and shipping highly optimized products that
+                users love to interact with.
               </p>
+              <div className="space-y-3">
+                {[
+                  { label: 'Languages', items: ['TypeScript', 'JavaScript', 'HTML', 'CSS', 'Sass'] },
+                  { label: 'Frameworks & Libraries', items: ['Next.js', 'React', 'Tailwind CSS', 'Tanstack Query', 'Drizzle ORM', 'Redux Toolkit', 'Radix UI', 'Better Auth'] },
+                  { label: 'Tools', items: ['Git', 'Figma', 'Cursor', 'Vercel', 'Jira', 'Docker', 'pnpm'] },
+                  { label: 'Databases & Services', items: ['PostgreSQL', 'SQLite', 'AWS S3', 'Turso', 'Cloudinary', 'Supabase', 'MongoDB', 'Ably'] },
+                ].map((group) => (
+                  <div key={group.label}>
+                    <h3 className="text-sm font-semibold text-foreground mb-1.5">{group.label}</h3>
+                    <div className="flex flex-wrap gap-1.5">
+                      {group.items.map((skill) => (
+                        <span
+                          key={skill}
+                          className="group/key relative px-2.5 py-1 text-xs rounded-md border border-foreground/15 bg-linear-to-b from-foreground/2 to-foreground/6 text-muted-foreground shadow-[0_2px_0_0] shadow-foreground/10 transition-all duration-150 hover:translate-y-0.5 hover:shadow-none hover:border-accent/30 cursor-default active:translate-y-0.5 active:shadow-none select-none"
+                        >
+                          {skill}
+                          <span className="absolute inset-0 flex items-center justify-center accent-gradient-text opacity-0 group-hover/key:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true">{skill}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
