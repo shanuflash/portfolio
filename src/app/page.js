@@ -11,7 +11,7 @@ export default function Home() {
       <Navigation currentPage="home" />
       <div className="border-t border-b soft-grid-border bg-background">
         <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="flex  items-center gap-4 p-0">
+          <div className="flex items-center gap-4 p-0">
             <div className="flex border-r h-full justify-center items-center p-2 soft-grid-border">
               <div className="w-24 h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
                 <Image
@@ -25,7 +25,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex-1 px-6">
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 mb-1">
                 <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
                   Shanu <span className="text-foreground/80">Sivakumar</span>
                 </h1>
@@ -37,28 +37,28 @@ export default function Home() {
                 </span>
                 .
               </p>
+              <p className="text-xs text-muted-foreground/50 mt-2">
+                Building cool stuff @{' '}
+                <span className="text-accent/75 font-medium">SurveySparrow</span>
+                {' '}since 2023
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-      <DiagonalDivider />
-      <div className="border-b soft-grid-border bg-background">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="space-y-6 p-8">
+          <div className="border-t soft-grid-border px-4 py-3 flex flex-wrap items-center gap-x-5 gap-y-2">
             {infoItems.map((item) => {
               const iconElement =
                 typeof item.icon === 'string'
-                  ? getIcon(item.icon, 'w-4 h-4 text-foreground mt-0.5')
+                  ? getIcon(item.icon, 'w-3.5 h-3.5 text-muted-foreground')
                   : item.icon;
               return (
-                <div key={item.id} className="flex items-start gap-3">
+                <div key={item.id} className="flex items-center gap-2">
                   <div
-                    className="w-4 h-4 text-foreground mt-0.5"
+                    className="w-3.5 h-3.5 text-muted-foreground"
                     aria-hidden="true"
                   >
                     {iconElement}
                   </div>
-                  <span className="text-sm text-foreground transition-all duration-300 hover:-translate-y-px">
+                  <span className="text-xs text-muted-foreground transition-all duration-300 hover:text-foreground">
                     {item.content}
                   </span>
                 </div>

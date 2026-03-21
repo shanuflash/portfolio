@@ -381,24 +381,29 @@ export const socialLinks = [
 
 export const infoItems = [
   {
-    id: 'role',
-    icon: 'Code',
-    content: (
-      <>
-        Frontend Developer at SurveySparrow
-        <br /> (2023 - Present)
-      </>
-    ),
+    id: 'location',
+    icon: 'MapPin',
+    content: 'Chennai, India',
   },
   {
     id: 'email',
     icon: 'Mail',
     content: (
-      <a
-        href="mailto:hello@shanu.dev"
-        className="text-sm text-foreground transition-all duration-300 hover:-translate-y-px"
-      >
+      <a href="mailto:hello@shanu.dev">
         hello@shanu.dev
+      </a>
+    ),
+  },
+  {
+    id: 'linkedin',
+    icon: 'Linkedin',
+    content: (
+      <a
+        href="https://www.linkedin.com/in/shanuflash/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        in/shanuflash
       </a>
     ),
   },
@@ -410,22 +415,8 @@ export const infoItems = [
         href="https://github.com/shanuflash"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1 text-sm text-foreground transition-all duration-300 hover:-translate-y-px"
       >
-        <span>View my projects on GitHub</span>
-        <svg
-          className="w-3 h-3"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-          />
-        </svg>
+        github/shanuflash
       </a>
     ),
   },

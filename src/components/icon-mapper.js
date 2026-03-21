@@ -30,6 +30,7 @@ import {
   Gamepad2,
   MemoryStick,
   Trophy,
+  MapPin,
 } from 'lucide-react';
 
 const iconMap = {
@@ -64,6 +65,7 @@ const iconMap = {
   Gamepad2,
   MemoryStick,
   Trophy,
+  MapPin,
 };
 
 export function getIcon(iconName, className = '') {
