@@ -1,6 +1,7 @@
 import Navigation from '../components/navigation';
 import DiagonalDivider from '../components/diagonal-divider';
 import BentoCard from '../components/bento-card';
+import StaggerReveal from '../components/stagger-reveal';
 import { socialLinks, infoItems, projects, featuredSkills, contactEmail } from '../data/portfolio';
 import { getIcon } from '../components/icon-mapper';
 import Image from 'next/image';
@@ -125,9 +126,11 @@ export default function Home() {
             <h2 className="text-xl font-bold text-foreground mb-6">Projects</h2>
             <div className="border soft-grid-border rounded-lg overflow-hidden">
               {/* Row 1: Hero project — full width */}
-              {projects.filter((p) => p.size === 'large').map((project) => (
+              {projects.filter((p) => p.size === 'large').map((project, i) => (
                 <div key={project.name} className="border-b soft-grid-border">
-                  <BentoCard project={project} />
+                  <StaggerReveal index={i}>
+                    <BentoCard project={project} />
+                  </StaggerReveal>
                 </div>
               ))}
 
@@ -138,7 +141,9 @@ export default function Home() {
                     key={project.name}
                     className={i < arr.length - 1 ? 'border-b sm:border-b-0 sm:border-r soft-grid-border' : ''}
                   >
-                    <BentoCard project={project} />
+                    <StaggerReveal index={i}>
+                      <BentoCard project={project} />
+                    </StaggerReveal>
                   </div>
                 ))}
               </div>
@@ -160,7 +165,9 @@ export default function Home() {
                         'soft-grid-border',
                       ].join(' ')}
                     >
-                      <BentoCard project={project} />
+                      <StaggerReveal index={i}>
+                        <BentoCard project={project} />
+                      </StaggerReveal>
                     </div>
                   );
                 })}
