@@ -74,21 +74,21 @@ export default function Home() {
             <h2 className="text-xl font-bold text-foreground mb-6">About</h2>
             <div className="space-y-5 text-sm text-foreground leading-relaxed">
               <p>
-                I&apos;m a Full Stack Engineer at SurveySparrow who loves
-                turning complex problems into clean, fast interfaces. I
-                gravitate toward real-time systems, developer tools, and
-                anything that involves wrangling data at scale.
+                I&apos;m a Full Stack Engineer who loves building things
+                that feel fast and work well. Real-time systems, developer
+                tools, data-heavy apps — if it&apos;s complex under the
+                hood but simple on the surface, I&apos;m into it.
               </p>
               <p>
-                When I&apos;m not shipping features, I&apos;m building side
-                projects — from game trackers to npm packages — because the
-                best way to learn a stack is to build something real with it.
+                Outside work, I build side projects — game trackers, npm
+                packages, desktop apps — either to solve a problem
+                I&apos;m facing or because an idea felt too cool not to build.
               </p>
               <div className="space-y-3">
                 {[
                   { label: 'Languages', items: ['TypeScript', 'JavaScript', 'C#', 'HTML', 'CSS', 'Sass'] },
                   { label: 'Frameworks & Libraries', items: ['Next.js', 'React', 'Tailwind CSS', 'Tanstack Query', 'Drizzle ORM', 'Redux Toolkit', 'Radix UI', 'Better Auth', 'Zustand', 'Ably'] },
-                  { label: 'Tools', items: ['Git', 'Figma', 'Cursor', 'Vercel', 'Jira', 'Docker', 'pnpm', 'Vite', 'Biome'] },
+                  { label: 'Tools', items: ['Git', 'Figma', 'Claude Code', 'Vercel', 'Jira', 'Docker', 'pnpm', 'Vite', 'Biome'] },
                   { label: 'Databases & Services', items: ['PostgreSQL', 'SQLite', 'AWS S3', 'Turso', 'Cloudinary', 'Supabase', 'MongoDB'] },
                 ].map((group) => (
                   <div key={group.label}>
