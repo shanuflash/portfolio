@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <PageShell nav="home">
       <Section annotation="SEC 01 · IDENT" padded={false}>
-        <div className="flex items-center gap-4 px-5 py-4 sm:px-6 sm:py-5">
+        <div className="flex items-center gap-4 sm:gap-6 px-6 py-5 sm:px-8 sm:py-6">
           <div className="shrink-0">
             <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
               <Image
@@ -43,10 +43,10 @@ export default function Home() {
               />
             </div>
             <div
-              className="hidden sm:block text-center text-[9px] text-muted-foreground/50 mt-1.5 select-none"
+              className="hidden sm:block text-center text-[9px] tracking-[0.14em] text-muted-foreground/60 mt-1.5 select-none"
               aria-hidden="true"
             >
-              ⊢ 96px ⊣
+              ⊢ IMG ⊣
             </div>
           </div>
           <div className="flex-1 min-w-0">
@@ -62,7 +62,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="border-t soft-grid-border px-5 pt-3 pb-1.5 sm:px-6 flex items-start sm:items-center gap-2">
+        <div className="border-t soft-grid-border px-6 sm:px-8 pt-4 pb-2 flex items-start sm:items-center gap-2">
           <div
             className="w-3.5 h-3.5 text-muted-foreground shrink-0 mt-0.5 sm:mt-0"
             aria-hidden="true"
@@ -73,7 +73,7 @@ export default function Home() {
             Shipping enterprise SaaS @ <span className="text-accent/75 font-medium">SurveySparrow</span> since 2023
           </span>
         </div>
-        <div className="px-5 pb-3 sm:px-6 grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-x-5 gap-y-2">
+        <div className="px-6 sm:px-8 pb-4 grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-x-5 gap-y-2.5">
           {infoItems.map((item) => {
             const iconElement =
               typeof item.icon === 'string'
