@@ -349,7 +349,21 @@ export const projects = [
   },
 ];
 
-export const featuredSkills = ['TypeScript', 'Next.js', 'React', 'PostgreSQL'];
+export const featuredSkills = [
+  'TypeScript',
+  'JavaScript',
+  'React',
+  'Next.js',
+  'Node.js',
+  'Express',
+  'Tailwind CSS',
+  'Claude Code',
+  'Git',
+  'Figma',
+  'PostgreSQL',
+  'Redis',
+  'AWS S3',
+];
 
 export const contactEmail = 'hello@shanu.dev';
 
