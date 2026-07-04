@@ -6,6 +6,17 @@ export default function Section({
   innerClassName = '',
   children,
 }) {
+  const mobileLabel = annotation && (
+    <span
+      className={`lg:hidden block text-[9px] tracking-[0.2em] uppercase text-muted-foreground/60 select-none ${
+        padded ? 'mb-3' : 'px-5 sm:px-6 pt-3'
+      }`}
+      aria-hidden="true"
+    >
+      {annotation}
+    </span>
+  );
+
   return (
     <div id={id} className={`border-b soft-grid-border ${className}`}>
       <div
@@ -16,7 +27,17 @@ export default function Section({
             {annotation}
           </span>
         )}
-        {padded ? <div className="p-8">{children}</div> : children}
+        {padded ? (
+          <div className="p-8">
+            {mobileLabel}
+            {children}
+          </div>
+        ) : (
+          <>
+            {mobileLabel}
+            {children}
+          </>
+        )}
       </div>
     </div>
   );
