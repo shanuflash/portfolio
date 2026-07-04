@@ -16,16 +16,16 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: 'Shanu Sivakumar | Portfolio',
   description:
-    'Frontend Developer at SurveySparrow. Specializing in React, Next.js, and modern web development. View my projects and get in touch.',
+    'Full Stack Developer at SurveySparrow. Specializing in React, Next.js, TypeScript, and Node.js. View my projects and get in touch.',
   keywords:
-    'Shanu Sivakumar, Frontend Developer, React, Next.js, JavaScript, Portfolio, SurveySparrow',
+    'Shanu Sivakumar, Full Stack Engineer, Frontend Engineer, React, Next.js, TypeScript, Node.js, Portfolio, SurveySparrow',
   author: 'Shanu Sivakumar',
   copyright: '© 2025 Shanu Sivakumar. All rights reserved.',
   robots: 'index, follow, noarchive, nosnippet',
   openGraph: {
     title: 'Shanu Sivakumar | Portfolio',
     description:
-      'Frontend Developer at SurveySparrow. Specializing in React, Next.js, and modern web development.',
+      'Full Stack Developer at SurveySparrow. Specializing in React, Next.js, TypeScript, and Node.js.',
     type: 'website',
     locale: 'en_US',
   },
@@ -33,7 +33,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Shanu Sivakumar | Portfolio',
     description:
-      'Frontend Developer at SurveySparrow. Specializing in React, Next.js, and modern web development.',
+      'Full Stack Developer at SurveySparrow. Specializing in React, Next.js, TypeScript, and Node.js.',
     creator: '@shanuflash',
   },
 };

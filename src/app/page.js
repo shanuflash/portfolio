@@ -7,9 +7,24 @@ import {
 } from '@/components/layout';
 import BentoCard from '@/components/bento-card';
 import StaggerReveal from '@/components/stagger-reveal';
-import { infoItems, projects, featuredSkills } from '@/data/portfolio';
-import { getIcon } from '@/components/icon-mapper';
+import { infoItems, projects, featuredSkills, experience, education } from '@/data/portfolio';
+import NextLevelPromo from '@/components/nextlevel-promo';
 import Image from 'next/image';
+
+function renderBold(text) {
+  return text
+    .split('**')
+    .map((part, i) =>
+      i % 2 === 1 ? (
+        <strong key={i} className="font-medium text-foreground/55">
+          {part}
+        </strong>
+      ) : (
+        part
+      )
+    );
+}
+import { getIcon } from '@/components/icon-mapper';
 
 export default function Home() {
   return (
@@ -21,7 +36,7 @@ export default function Home() {
               <Image
                 width={96}
                 height={96}
-                src="/profile-bw.webp"
+                src="/profile-sketch.webp"
                 alt="Shanu Sivakumar"
                 className="object-cover rounded-full"
                 priority
@@ -39,9 +54,9 @@ export default function Home() {
               Shanu <span className="text-foreground/80">Sivakumar</span>
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground font-light mt-1">
-              Full Stack Engineer, crafting{' '}
+              Full Stack / Frontend Engineer, building{' '}
               <span className="text-foreground/80 font-medium">
-                real-time, data-rich web products
+                things too cool not to ship
               </span>
               .
             </p>
@@ -55,7 +70,7 @@ export default function Home() {
             {getIcon('Briefcase', 'w-3.5 h-3.5 text-muted-foreground')}
           </div>
           <span className="text-xs text-muted-foreground">
-            Building cool stuff @ <span className="text-accent/75 font-medium">SurveySparrow</span> since 2023
+            Shipping enterprise SaaS @ <span className="text-accent/75 font-medium">SurveySparrow</span> since 2023
           </span>
         </div>
         <div className="px-5 pb-3 sm:px-6 grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-x-5 gap-y-2">
@@ -94,7 +109,8 @@ export default function Home() {
           <p>
             Outside work, I build side projects — game trackers, npm
             packages, desktop apps — either to solve a problem
-            I&apos;m facing or because an idea felt too cool not to build.
+            I&apos;m facing or because the idea wouldn&apos;t leave me
+            alone.
           </p>
           <div className="space-y-5">
             {[
@@ -182,7 +198,60 @@ export default function Home() {
         </div>
       </Section>
       <DiagonalDivider label="SEC 04" />
-      <ContactSection id="socials" annotation="SEC 04 · CONTACT" showResume />
+      <Section id="background" annotation="SEC 04 · BACKGROUND">
+        <h2 className="text-xl font-bold text-foreground mb-6">Background</h2>
+        <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+          Experience
+        </h3>
+        <div className="space-y-8">
+          {experience.map((job) => (
+            <div key={job.company}>
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h3 className="text-sm font-bold text-foreground">
+                  {job.role} <span className="text-muted-foreground font-normal">@</span>{' '}
+                  <span className="text-accent/90">{job.company}</span>
+                </h3>
+                <div className="text-xs text-muted-foreground tabular-nums">
+                  {job.period} · {job.location}
+                </div>
+              </div>
+              <ul className="mt-4 space-y-2.5">
+                {job.bullets.map((bullet, i) => (
+                  <li key={i} className="flex gap-2.5 text-xs text-muted-foreground font-light leading-relaxed">
+                    <span className="text-accent/60 shrink-0 select-none" aria-hidden="true">
+                      ▸
+                    </span>
+                    <span>{renderBold(bullet)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-8 mb-3">
+          Education
+        </h3>
+        {education.map((entry) => (
+          <div
+            key={entry.school}
+            className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
+          >
+            <div className="text-sm text-foreground">
+              <span className="font-bold">{entry.school}</span>{' '}
+              <span className="text-muted-foreground font-light">
+                — {entry.degree}
+              </span>
+            </div>
+            <div className="text-xs text-muted-foreground tabular-nums">
+              {entry.period} · {entry.location}
+            </div>
+          </div>
+        ))}
+      </Section>
+      <DiagonalDivider label="SEC 05" />
+      <NextLevelPromo />
+      <DiagonalDivider label="SEC 06" />
+      <ContactSection id="socials" annotation="SEC 06 · CONTACT" showResume />
       <TitleBlock sheet="SHT 01 · HOME" />
     </PageShell>
   );

@@ -349,6 +349,41 @@ export const projects = [
   },
 ];
 
+export const experience = [
+  {
+    company: 'SurveySparrow',
+    location: 'Chennai, India',
+    role: 'Full Stack Developer',
+    period: 'Aug 2023 — Present',
+    current: true,
+    bullets: [
+      'Led the rebuild of the legacy Mobile Web platform in under 3 months using React and JavaScript, leveraging **TanStack Query** and **@dnd-kit** to architect a touch-friendly drag-and-drop survey builder integrated with backend APIs that **drove a 200% increase in mobile completion and creation rates**.',
+      'Modernized data fetching across the platform by migrating from Redux/Axios to **TanStack Query**, optimizing server-state management and caching to **reduce frontend network overhead by 20%**.',
+      'Rebuilt the Ticket Management platform with parent-child ticketing, advanced filtering, keyboard-friendly workflows, and HubSpot/SparrowDesk API support, **improving support team navigation speed by 50%**.',
+      'Designed and implemented an interactive Executive Dashboard for Ticket Management, engineering custom date ranges, paginated list views, and chart visualizations to **provide enterprise clients with real-time operational analytics**.',
+      'Developed core productivity features including a Lexical-based rich text editor, custom macros, quick replies, and reusable attachment viewers while **integrating Node.js backend services** to automate ticket workflows.',
+      'Built full-stack pricing, upgrade, trial expiry, and feature-gating infrastructure, **implementing backend microservices** to enforce usage limits, manage Stripe billing, and handle subscriptions.',
+      'Engineered core growth automation tools inside the "Area51" internal super-admin console, creating an automated seasonal campaign manager and handling cross-platform subaccount unlinking **with real-time billing synchronization**.',
+      'Expanded authentication and platform security by developing Apple Sign-In, multi-channel 2FA (Email, SMS, TOTP), and password policy enforcement flows **backed by PostgreSQL and Redis**.',
+      'Engineered a centralized library of reusable components and shared UI systems including standardized banners, onboarding widgets, and sandbox tooling **reducing frontend development redundancy by 30%**.',
+    ],
+  },
+];
+
+export const education = [
+  {
+    school: 'Saveetha Engineering College',
+    degree: 'B.Tech, Information Technology',
+    location: 'Chennai, India',
+    period: 'Aug 2020 — May 2024',
+  },
+];
+
+export const nextLevel = {
+  username: 'fl45hy',
+  url: 'https://nextlevel.shanu.dev',
+};
+
 export const featuredSkills = [
   'TypeScript',
   'JavaScript',
