@@ -215,6 +215,19 @@ img::-webkit-selection {
     color: oklch(0.44 0.01 286);
   }
 
+  /* Drafting sheet: standalone + glyph in the crosshair tone */
+  .crosshair-glyph {
+    color: oklch(0.76 0.01 286);
+    font-size: 0.8125rem;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .dark .crosshair-glyph {
+    color: oklch(0.44 0.01 286);
+  }
+
   /* Drafting sheet: vertical margin annotation riding the left rail */
   .rail-annotation {
     position: absolute;

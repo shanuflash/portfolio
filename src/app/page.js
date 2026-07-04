@@ -30,26 +30,8 @@ export default function Home() {
   return (
     <PageShell nav="home">
       <Section annotation="SEC 01 · IDENT" padded={false}>
-        <div className="flex items-center gap-4 sm:gap-6 px-6 py-5 sm:px-8 sm:py-6">
-          <div className="shrink-0">
-            <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
-              <Image
-                width={96}
-                height={96}
-                src="/profile-sketch.webp"
-                alt="Shanu Sivakumar"
-                className="object-cover rounded-full"
-                priority
-              />
-            </div>
-            <div
-              className="hidden sm:block text-center text-[9px] tracking-[0.14em] text-muted-foreground/60 mt-1.5 select-none"
-              aria-hidden="true"
-            >
-              ⊢ IMG ⊣
-            </div>
-          </div>
-          <div className="flex-1 min-w-0">
+        <div className="flex items-center justify-between gap-5 sm:gap-8 px-6 py-5 sm:px-8 sm:py-7">
+          <div className="min-w-0">
             <h1 className="text-3xl sm:text-[42px] font-bold text-foreground leading-[1.05] tracking-[-0.03em]">
               Shanu <span className="text-foreground/60">Sivakumar</span>
             </h1>
@@ -60,6 +42,22 @@ export default function Home() {
               </span>
               .
             </p>
+          </div>
+          <div className="relative shrink-0 rotate-[5deg] border-2 border-dashed soft-grid-border p-2.5 mr-1 sm:mr-4">
+            <span className="crosshair-glyph absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2" aria-hidden="true">+</span>
+            <span className="crosshair-glyph absolute top-0 right-0 translate-x-1/2 -translate-y-1/2" aria-hidden="true">+</span>
+            <span className="crosshair-glyph absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2" aria-hidden="true">+</span>
+            <span className="crosshair-glyph absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2" aria-hidden="true">+</span>
+            <div className="w-16 h-16 sm:w-[104px] sm:h-[104px] rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
+              <Image
+                width={96}
+                height={96}
+                src="/profile-sketch.webp"
+                alt="Shanu Sivakumar"
+                className="object-cover rounded-full"
+                priority
+              />
+            </div>
           </div>
         </div>
         <div className="border-t soft-grid-border px-6 sm:px-8 pt-4 pb-2 flex items-start sm:items-center gap-2">
