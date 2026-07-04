@@ -1,9 +1,12 @@
-import Navigation from '@/components/navigation';
-import DiagonalDivider from '@/components/diagonal-divider';
+import {
+  PageShell,
+  Section,
+  DiagonalDivider,
+  TitleBlock,
+  ContactSection,
+} from '@/components/layout';
 import SearchBar from './search-bar';
 import { FileText } from 'lucide-react';
-import { getIcon } from '@/components/icon-mapper';
-import { socialLinks, contactEmail } from '@/data/portfolio';
 
 export const metadata = {
   title: 'Blog | Shanu Sivakumar',
@@ -59,54 +62,23 @@ const Blog = async () => {
   const categories = await getCategories();
 
   return (
-    <div className="min-h-screen font-mono">
-      <Navigation currentPage="blog" />
+    <PageShell nav="blog">
       <SearchBar />
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          {posts.length > 0 ? (
-            <div>
-              {posts.map((post) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
-            </div>
-          ) : (
-            <EmptyState />
-          )}
-        </div>
-      </div>
-      <DiagonalDivider />
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-8">
-            <h2 className="text-xl font-bold text-foreground mb-2">
-              Let&apos;s build something together
-            </h2>
-            <div className="flex items-center gap-4 mt-1">
-              <a
-                href={`mailto:${contactEmail}`}
-                className="text-sm text-accent hover:underline transition-colors"
-              >
-                {contactEmail}
-              </a>
-            </div>
-            <div className="flex items-center gap-8 mt-6 pt-6 border-t soft-grid-border">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground transition-all duration-300 hover:text-accent hover:-translate-y-px hover:scale-110"
-                >
-                  {getIcon(social.icon, 'h-6 w-6')}
-                </a>
-              ))}
-            </div>
+      <Section annotation="SEC 01 · LOG" padded={false}>
+        {posts.length > 0 ? (
+          <div>
+            {posts.map((post) => (
+              <BlogCard key={post.id} post={post} />
+            ))}
           </div>
-        </div>
-      </div>
-    </div>
+        ) : (
+          <EmptyState />
+        )}
+      </Section>
+      <DiagonalDivider label="SEC 02" />
+      <ContactSection annotation="SEC 02 · CONTACT" />
+      <TitleBlock sheet="SHT 03 · BLOG" />
+    </PageShell>
   );
 };
 

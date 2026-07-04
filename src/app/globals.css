@@ -182,6 +182,76 @@ img::-webkit-selection {
     box-shadow: 0 0 20px color-mix(in oklch, var(--accent) 30%, transparent);
   }
 
+  /* Drafting sheet — registration crosshairs at rail intersections */
+  .crosshair-section {
+    position: relative;
+  }
+
+  .crosshair-section::before,
+  .crosshair-section::after {
+    content: '+';
+    position: absolute;
+    top: 0;
+    font-size: 0.8125rem;
+    line-height: 1;
+    color: oklch(0.76 0.01 286);
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+  }
+
+  .crosshair-section::before {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .crosshair-section::after {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  .dark .crosshair-section::before,
+  .dark .crosshair-section::after {
+    color: oklch(0.44 0.01 286);
+  }
+
+  /* Drafting sheet — vertical margin annotation riding the left rail */
+  .rail-annotation {
+    position: absolute;
+    top: 2rem;
+    left: -1.75rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: color-mix(in oklch, var(--muted-foreground) 70%, transparent);
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  /* Drafting sheet — section ref chip riding the hatch divider */
+  .hatch-label {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    background: var(--background);
+    border: 1px solid oklch(0.91 0.005 286);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.5625rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    user-select: none;
+  }
+
+  .dark .hatch-label {
+    border-color: oklch(0.3 0.005 286);
+  }
+
   .accent-gradient-text {
     background-image: linear-gradient(
       90deg,
@@ -202,6 +272,21 @@ img::-webkit-selection {
 @keyframes accent-shift {
   0% { background-position: 0% 50%; }
   100% { background-position: 300% 50%; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rail-annotation,
+  .hatch-label,
+  .crosshair-section::before,
+  .crosshair-section::after {
+    animation: anno-fade-in 0.6s ease 0.15s backwards;
+  }
+}
+
+@keyframes anno-fade-in {
+  from {
+    opacity: 0;
+  }
 }
 
 ::view-transition-old(root),

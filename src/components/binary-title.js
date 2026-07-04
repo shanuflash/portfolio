@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { TextScramble } from './ui/text-scramble';
 import { Tooltip, TooltipTrigger, TooltipContent } from './ui/tooltip';
+import { Section } from './layout';
 
 const BinaryTitle = ({ word }) => {
   const [showEnglish, setShowEnglish] = useState(false);
@@ -12,8 +13,8 @@ const BinaryTitle = ({ word }) => {
     .join(' ');
 
   return (
-    <div className="flex justify-center">
-      <div className="max-w-4xl border-x soft-grid-border mx-auto py-8 w-full">
+    <Section padded={false}>
+      <div className="py-8 w-full">
         <Tooltip>
           <TooltipTrigger asChild>
             <div
@@ -33,7 +34,7 @@ const BinaryTitle = ({ word }) => {
           </TooltipContent>
         </Tooltip>
       </div>
-    </div>
+    </Section>
   );
 };
 export default BinaryTitle;

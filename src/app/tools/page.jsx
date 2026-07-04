@@ -1,8 +1,11 @@
 import ProductCard from '@/components/product-card';
-import DiagonalDivider from '@/components/diagonal-divider';
-import Navigation from '@/components/navigation';
-import { getIcon } from '@/components/icon-mapper';
-import { socialLinks, contactEmail } from '@/data/portfolio';
+import {
+  PageShell,
+  Section,
+  DiagonalDivider,
+  TitleBlock,
+  ContactSection,
+} from '@/components/layout';
 
 export const metadata = {
   title: 'Tools | Shanu Sivakumar',
@@ -231,69 +234,40 @@ const Tools = () => {
   const wipTools = products.filter((p) => p.wip);
 
   return (
-    <div className="min-h-screen font-mono">
-      <Navigation currentPage="tools" />
-
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-8">
-            <h2 className="text-xl font-bold text-foreground mb-6">Tools</h2>
-            <div className="border soft-grid-border rounded-lg overflow-hidden">
-              <ToolGrid tools={activeTools} />
-            </div>
-
-            <h3 className="text-sm font-semibold text-muted-foreground mt-8 mb-3">Coming Soon</h3>
-            <div className="border soft-grid-border rounded-lg overflow-hidden">
-              <ToolGrid tools={wipTools} isWipSection />
-            </div>
-          </div>
+    <PageShell nav="tools">
+      <Section annotation="SEC 01 · TOOLS">
+        <h2 className="text-xl font-bold text-foreground mb-6">Tools</h2>
+        <div className="border soft-grid-border rounded-lg overflow-hidden">
+          <ToolGrid tools={activeTools} />
         </div>
-      </div>
 
-      <DiagonalDivider />
-
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-8">
-            <h2 className="text-xl font-bold text-foreground mb-2">
-              Have a tool idea?
-            </h2>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-              These tools are based on things I frequently search for online.
-              If you think we should add something new, feel free to open a PR/Issue on the{' '}
-              <a
-                href="https://github.com/shanuflash/portfolio"
-                className="text-accent hover:underline"
-              >
-                GitHub repo
-              </a>
-              .
-            </p>
-            <div className="flex items-center gap-4 mt-4">
-              <a
-                href={`mailto:${contactEmail}`}
-                className="text-sm text-accent hover:underline transition-colors"
-              >
-                {contactEmail}
-              </a>
-            </div>
-            <div className="flex items-center gap-8 mt-6 pt-6 border-t soft-grid-border">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground transition-all duration-300 hover:text-accent hover:-translate-y-px hover:scale-110"
-                >
-                  {getIcon(social.icon, 'h-6 w-6')}
-                </a>
-              ))}
-            </div>
-          </div>
+        <h3 className="text-sm font-semibold text-muted-foreground mt-8 mb-3">Coming Soon</h3>
+        <div className="border soft-grid-border rounded-lg overflow-hidden">
+          <ToolGrid tools={wipTools} isWipSection />
         </div>
-      </div>
-    </div>
+      </Section>
+
+      <DiagonalDivider label="SEC 02" />
+
+      <ContactSection
+        annotation="SEC 02 · CONTACT"
+        title="Have a tool idea?"
+        blurb={
+          <>
+            These tools are based on things I frequently search for online.
+            If you think we should add something new, feel free to open a PR/Issue on the{' '}
+            <a
+              href="https://github.com/shanuflash/portfolio"
+              className="text-accent hover:underline"
+            >
+              GitHub repo
+            </a>
+            .
+          </>
+        }
+      />
+      <TitleBlock sheet="SHT 02 · TOOLS" />
+    </PageShell>
   );
 };
 

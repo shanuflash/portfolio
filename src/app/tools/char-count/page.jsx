@@ -1,7 +1,11 @@
 'use client';
 
-import Navigation from '@/components/navigation';
-import DiagonalDivider from '@/components/diagonal-divider';
+import {
+  PageShell,
+  Section,
+  DiagonalDivider,
+  TitleBlock,
+} from '@/components/layout';
 import { useState, useMemo } from 'react';
 
 const CharCount = () => {
@@ -77,20 +81,14 @@ const CharCount = () => {
   };
 
   return (
-    <div className="min-h-screen font-mono">
-      <Navigation currentPage="tools" />
-
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="px-6 py-4">
-            <h1 className="text-xl font-bold text-foreground">Character Counter</h1>
-          </div>
+    <PageShell nav="tools">
+      <Section padded={false}>
+        <div className="px-6 py-4">
+          <h1 className="text-xl font-bold text-foreground">Character Counter</h1>
         </div>
-      </div>
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-6">
-            <div className="space-y-6">
+      </Section>
+      <Section annotation="SEC 01 · INPUT">
+        <div className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Enter your text
@@ -164,16 +162,12 @@ const CharCount = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
         </div>
-      </div>
+      </Section>
 
-      <DiagonalDivider />
+      <DiagonalDivider label="SEC 02" />
 
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-6">
+      <Section annotation="SEC 02 · ACTIONS">
             <h2 className="text-lg font-semibold text-foreground mb-4">
               Additional Features
             </h2>
@@ -199,17 +193,13 @@ const CharCount = () => {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+      </Section>
 
-      <DiagonalDivider />
+      <DiagonalDivider label="SEC 03" />
 
       {/* Word Frequency Section */}
 
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-6">
+      <Section annotation="SEC 03 · ANALYSIS">
             <h2 className="text-lg font-semibold text-foreground mb-4">
               Word Frequency
             </h2>
@@ -254,10 +244,9 @@ const CharCount = () => {
                 </div>
               </div>
             )}
-          </div>
-        </div>
-      </div>
-    </div>
+      </Section>
+      <TitleBlock sheet="SHT 02.1 · CHAR COUNT" />
+    </PageShell>
   );
 };
 

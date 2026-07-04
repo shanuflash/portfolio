@@ -1,7 +1,7 @@
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
-import Navigation from '@/components/navigation';
 import LogoutButton from '@/components/logout-button';
+import { PageShell, Section, TitleBlock } from '@/components/layout';
 import {
   Users,
   Shield,
@@ -54,11 +54,8 @@ const Area51 = async () => {
   });
 
   return (
-    <div className="min-h-screen font-mono">
-      <Navigation currentPage="area51" showAdminLink={true} />
-      <div className="border-b soft-grid-border">
-        <div className="max-w-4xl border-x soft-grid-border mx-auto">
-          <div className="p-8">
+    <PageShell nav="area51" showAdminLink>
+      <Section annotation="SEC 51 · RESTRICTED">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
@@ -101,10 +98,9 @@ const Area51 = async () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </Section>
+      <TitleBlock sheet="SHT 51 · AREA51" rev="CLASSIFIED" />
+    </PageShell>
   );
 };
 
