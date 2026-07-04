@@ -16,10 +16,6 @@ async function getPosts() {
   return [];
 }
 
-async function getCategories() {
-  return [];
-}
-
 const BlogCard = ({ post }) => (
   <div className="border-b soft-grid-border p-6 transition-all duration-300 hover:-translate-y-px hover:bg-muted/20">
     <div className="flex items-start justify-between mb-3">
@@ -59,7 +55,6 @@ const EmptyState = () => (
 
 const Blog = async () => {
   const posts = await getPosts();
-  const categories = await getCategories();
 
   return (
     <PageShell nav="blog">

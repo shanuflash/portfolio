@@ -19,9 +19,7 @@ export default function ThemeToggle() {
   const toggleTheme = async () => {
     if (!buttonRef.current || !mounted) return;
 
-    // Check if View Transition API is supported
     if (!document.startViewTransition) {
-      // Fallback for browsers that don't support View Transition API
       const newTheme = !isDark;
       setIsDark(newTheme);
 

@@ -182,7 +182,6 @@ const CharCount = () => {
                 </button>
               </div>
 
-              {/* Copy Stats */}
               <div className="flex justify-between items-center">
                 <span className="text-sm text-foreground">Copy statistics</span>
                 <button
@@ -196,8 +195,6 @@ const CharCount = () => {
       </Section>
 
       <DiagonalDivider label="SEC 03" />
-
-      {/* Word Frequency Section */}
 
       <Section annotation="SEC 03 · ANALYSIS">
             <h2 className="text-lg font-semibold text-foreground mb-4">

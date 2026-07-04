@@ -2,51 +2,7 @@ import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 import LogoutButton from '@/components/logout-button';
 import { PageShell, Section, TitleBlock } from '@/components/layout';
-import {
-  Users,
-  Shield,
-  Settings,
-  BarChart3,
-  Database,
-  Key,
-} from 'lucide-react';
-
-const AdminCard = ({
-  title,
-  description,
-  icon: Icon,
-  href,
-  variant = 'default',
-}) => (
-  <a
-    href={href}
-    className={`block p-6 border soft-grid-border transition-all duration-300 hover:-translate-y-px hover:bg-muted/20 group ${
-      variant === 'primary' ? 'bg-accent/5 border-accent/20' : ''
-    }`}
-  >
-    <div className="flex items-start gap-4">
-      <div
-        className={`w-10 h-10 rounded-full flex items-center justify-center ${
-          variant === 'primary' ? 'bg-accent/20' : 'bg-muted/50'
-        }`}
-      >
-        <Icon
-          className={`w-5 h-5 ${
-            variant === 'primary' ? 'text-accent' : 'text-muted-foreground'
-          }`}
-        />
-      </div>
-      <div className="flex-1">
-        <h3 className="font-semibold text-foreground mb-1 group-hover:text-accent transition-colors">
-          {title}
-        </h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          {description}
-        </p>
-      </div>
-    </div>
-  </a>
-);
+import { Shield } from 'lucide-react';
 
 const Area51 = async () => {
   const session = await auth.api.getSession({

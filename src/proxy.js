@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import { auth } from '@/lib/auth';
 
@@ -7,7 +7,6 @@ export async function proxy(request) {
     headers: await headers(),
   });
 
-  // Check if user is signed in and is an admin
   if (!session || session.user.role !== 'admin') {
     return NextResponse.redirect(new URL('/login', request.url));
   }
