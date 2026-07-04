@@ -138,7 +138,15 @@ export const infoItems = [
   {
     id: 'location',
     icon: 'MapPin',
-    content: 'Chennai, India',
+    content: (
+      <a
+        href="https://maps.google.com/?q=Chennai,India"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chennai, India
+      </a>
+    ),
   },
   {
     id: 'email',
