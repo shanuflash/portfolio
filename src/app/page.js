@@ -50,10 +50,10 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1 min-w-0">
-            <h1 className="text-xl sm:text-3xl font-bold text-foreground leading-tight">
-              Shanu <span className="text-foreground/80">Sivakumar</span>
+            <h1 className="text-3xl sm:text-[42px] font-bold text-foreground leading-[1.05] tracking-[-0.03em]">
+              Shanu <span className="text-foreground/60">Sivakumar</span>
             </h1>
-            <p className="text-sm sm:text-base text-muted-foreground font-light mt-1">
+            <p className="text-sm sm:text-base text-muted-foreground font-light mt-2">
               Full Stack / Frontend Engineer, building{' '}
               <span className="text-foreground/80 font-medium">
                 things too cool not to ship
