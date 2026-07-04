@@ -182,7 +182,7 @@ img::-webkit-selection {
     box-shadow: 0 0 20px color-mix(in oklch, var(--accent) 30%, transparent);
   }
 
-  /* Drafting sheet — registration crosshairs at rail intersections */
+  /* Drafting sheet: registration crosshairs at rail intersections */
   .crosshair-section {
     position: relative;
   }
@@ -215,7 +215,7 @@ img::-webkit-selection {
     color: oklch(0.44 0.01 286);
   }
 
-  /* Drafting sheet — vertical margin annotation riding the left rail */
+  /* Drafting sheet: vertical margin annotation riding the left rail */
   .rail-annotation {
     position: absolute;
     top: 2rem;
@@ -231,7 +231,7 @@ img::-webkit-selection {
     white-space: nowrap;
   }
 
-  /* Drafting sheet — section ref chip riding the hatch divider */
+  /* Drafting sheet: section ref chip riding the hatch divider */
   .hatch-label {
     position: absolute;
     top: 50%;

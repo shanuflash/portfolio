@@ -17,7 +17,7 @@ export default function ContactSection({
       <h2 className="text-xl font-bold text-foreground mb-2">{title}</h2>
       <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
         {blurb ??
-          'Interesting problem, open role, or just a game recommendation — my inbox is open.'}
+          'Interesting problem, open role, or just a game recommendation? My inbox is open.'}
       </p>
       <a
         href={`mailto:${contactEmail}`}

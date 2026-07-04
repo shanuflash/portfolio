@@ -71,10 +71,10 @@ const Login = () => {
       ];
     }
     return [
-      `> access attempt logged — ${ident.time}`,
-      '> route: /login — absent from every published index',
+      `> access attempt logged @ ${ident.time}`,
+      '> route: /login. absent from every published index',
       '> no link leads here. you arrived on purpose.',
-      '> identify yourself — or close the tab, and we both forget this happened.',
+      '> identify yourself, or close the tab and we both forget this happened.',
     ];
   }, [ident]);
 

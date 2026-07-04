@@ -5,7 +5,7 @@ import {
   TitleBlock,
   ContactSection,
 } from '@/components/layout';
-import BentoCard from '@/components/bento-card';
+import ProjectFigure, { ProjectFigureCompact } from '@/components/project-figure';
 import StaggerReveal from '@/components/stagger-reveal';
 import { infoItems, projects, featuredSkills, experience, education } from '@/data/portfolio';
 import NextLevelPromo from '@/components/nextlevel-promo';
@@ -101,14 +101,14 @@ export default function Home() {
         <div className="space-y-5 text-sm text-foreground leading-relaxed">
           <p>
             I&apos;m a Full Stack Engineer who builds enterprise SaaS for a
-            living — React UIs that stay fast no matter how much data you
+            living: React UIs that stay fast no matter how much data you
             throw at them, and billing pipelines that move real money
             without dropping a cent. If it&apos;s complex under the hood
             but simple on the surface, I&apos;m into it.
           </p>
           <p>
-            Outside work, I build side projects — game trackers, npm
-            packages, desktop apps — either to solve a problem
+            Outside work, I build side projects like game trackers, npm
+            packages, and desktop apps, either to solve a problem
             I&apos;m facing or because the idea wouldn&apos;t leave me
             alone.
           </p>
@@ -147,53 +147,42 @@ export default function Home() {
       <DiagonalDivider label="SEC 03" />
       <Section id="projects" annotation="SEC 03 · PROJECTS">
         <h2 className="text-xl font-bold text-foreground mb-6">Projects</h2>
-        <div className="border soft-grid-border rounded-lg overflow-hidden">
-          {/* Row 1: Hero project — full width */}
+        <div className="space-y-6">
           {projects.filter((p) => p.size === 'large').map((project, i) => (
-            <div key={project.name} className="border-b soft-grid-border">
-              <StaggerReveal index={i}>
-                <BentoCard project={project} />
-              </StaggerReveal>
-            </div>
+            <StaggerReveal key={project.name} index={i}>
+              <ProjectFigure project={project} wide />
+            </StaggerReveal>
           ))}
-
-          {/* Row 2: Medium projects — 2 columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2">
-            {projects.filter((p) => p.size === 'medium').map((project, i, arr) => (
-              <div
-                key={project.name}
-                className={i < arr.length - 1 ? 'border-b sm:border-b-0 sm:border-r soft-grid-border' : ''}
-              >
-                <StaggerReveal index={i}>
-                  <BentoCard project={project} />
-                </StaggerReveal>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {projects.filter((p) => p.size === 'medium').map((project, i) => (
+              <StaggerReveal key={project.name} index={i}>
+                <ProjectFigure project={project} />
+              </StaggerReveal>
             ))}
           </div>
-        </div>
-
-        {/* Other Projects */}
-        <h3 className="text-sm font-semibold text-muted-foreground mt-8 mb-3">Other Projects</h3>
-        <div className="border soft-grid-border rounded-lg overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2">
-            {projects.filter((p) => p.size === 'small').map((project, i, arr) => {
-              const isLastOdd = arr.length % 2 === 1 && i === arr.length - 1;
-              return (
+          <div className="border soft-grid-border rounded-lg overflow-hidden">
+            <div className="grid grid-cols-1 sm:grid-cols-3">
+              {projects.filter((p) => p.size === 'small').map((project, i, arr) => (
                 <div
                   key={project.name}
-                  className={[
-                    i < arr.length - 1 ? 'border-b sm:border-b-0' : '',
-                    !isLastOdd && i % 2 === 0 ? 'sm:border-r' : '',
-                    isLastOdd ? 'sm:col-span-2 sm:border-t' : '',
-                    'soft-grid-border',
-                  ].join(' ')}
+                  className={`soft-grid-border ${i < arr.length - 1 ? 'border-b sm:border-b-0 sm:border-r' : ''}`}
                 >
                   <StaggerReveal index={i}>
-                    <BentoCard project={project} />
+                    <ProjectFigureCompact project={project} />
                   </StaggerReveal>
                 </div>
-              );
-            })}
+              ))}
+            </div>
+          </div>
+          <div className="text-right">
+            <a
+              href="https://github.com/shanuflash?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-muted-foreground hover:text-accent transition-colors"
+            >
+              full index on GitHub ↗
+            </a>
           </div>
         </div>
       </Section>
@@ -239,7 +228,7 @@ export default function Home() {
             <div className="text-sm text-foreground">
               <span className="font-bold">{entry.school}</span>{' '}
               <span className="text-muted-foreground font-light">
-                — {entry.degree}
+                · {entry.degree}
               </span>
             </div>
             <div className="text-xs text-muted-foreground tabular-nums">
