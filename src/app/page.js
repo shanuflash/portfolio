@@ -199,7 +199,7 @@ export default function Home() {
               </a>
               <span className="text-muted-foreground/30">|</span>
               <a
-                href="/Shanu S - Resume May 2026.pdf"
+                href="/Shanu S - Resume July 2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-sm text-accent hover:underline transition-colors"
