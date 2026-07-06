@@ -31,14 +31,12 @@ export default function Navigation({ currentPage, showAdminLink = false }) {
               key={link.href}
               href={link.href}
               aria-current={link.isActive ? 'page' : undefined}
-              className={`group px-4 sm:px-5 py-3 border-l soft-grid-border flex items-center transition-colors duration-300 ${
-                link.isActive ? 'bg-accent/6' : 'hover:bg-foreground/3'
-              }`}
+              className="group px-4 sm:px-5 py-3 border-l soft-grid-border flex items-center transition-colors duration-300"
             >
               <span
                 className={`text-xs tracking-wide transition-colors ${
                   link.isActive
-                    ? 'text-accent font-medium'
+                    ? 'text-accent'
                     : 'text-foreground/90 group-hover:text-accent'
                 }`}
               >
