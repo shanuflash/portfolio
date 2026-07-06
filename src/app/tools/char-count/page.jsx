@@ -84,163 +84,161 @@ const CharCount = () => {
     <PageShell nav="tools">
       <Section padded={false}>
         <div className="px-6 py-4">
-          <h1 className="text-xl font-bold text-foreground">Character Counter</h1>
+          <h1 className="text-xl font-bold text-foreground">
+            Character Counter
+          </h1>
         </div>
       </Section>
       <Section annotation="SEC 01 · INPUT">
         <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Enter your text
-                </label>
-                <textarea
-                  value={text}
-                  onChange={handleTextChange}
-                  className="w-full h-48 p-3 border soft-grid-border rounded-md bg-background text-foreground text-sm font-mono resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
-                  placeholder="Type or paste your text here to count characters, words, sentences, and paragraphs..."
-                />
-              </div>
+          <div>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Enter your text
+            </label>
+            <textarea
+              value={text}
+              onChange={handleTextChange}
+              className="w-full h-48 p-3 border soft-grid-border rounded-md bg-background text-foreground text-sm font-mono resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+              placeholder="Type or paste your text here to count characters, words, sentences, and paragraphs..."
+            />
+          </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="border soft-grid-border rounded-md p-4 text-center">
-                  <div className="text-2xl font-bold text-foreground">
-                    {stats.characters}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Characters
-                  </div>
-                </div>
-                <div className="border soft-grid-border rounded-md p-4 text-center">
-                  <div className="text-2xl font-bold text-foreground">
-                    {stats.charactersNoSpaces}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Characters (no spaces)
-                  </div>
-                </div>
-                <div className="border soft-grid-border rounded-md p-4 text-center">
-                  <div className="text-2xl font-bold text-foreground">
-                    {stats.words}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Words
-                  </div>
-                </div>
-                <div className="border soft-grid-border rounded-md p-4 text-center">
-                  <div className="text-2xl font-bold text-foreground">
-                    {stats.spaces}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Spaces
-                  </div>
-                </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="border soft-grid-border rounded-md p-4 text-center">
+              <div className="text-2xl font-bold text-foreground">
+                {stats.characters}
               </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                Characters
+              </div>
+            </div>
+            <div className="border soft-grid-border rounded-md p-4 text-center">
+              <div className="text-2xl font-bold text-foreground">
+                {stats.charactersNoSpaces}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                Characters (no spaces)
+              </div>
+            </div>
+            <div className="border soft-grid-border rounded-md p-4 text-center">
+              <div className="text-2xl font-bold text-foreground">
+                {stats.words}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">Words</div>
+            </div>
+            <div className="border soft-grid-border rounded-md p-4 text-center">
+              <div className="text-2xl font-bold text-foreground">
+                {stats.spaces}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">Spaces</div>
+            </div>
+          </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="border soft-grid-border rounded-md p-4 text-center">
-                  <div className="text-2xl font-bold text-foreground">
-                    {stats.sentences}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Sentences
-                  </div>
-                </div>
-                <div className="border soft-grid-border rounded-md p-4 text-center">
-                  <div className="text-2xl font-bold text-foreground">
-                    {stats.paragraphs}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Paragraphs
-                  </div>
-                </div>
-                <div className="border soft-grid-border rounded-md p-4 text-center">
-                  <div className="text-2xl font-bold text-foreground">
-                    {stats.readingTime}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Reading Time
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="border soft-grid-border rounded-md p-4 text-center">
+              <div className="text-2xl font-bold text-foreground">
+                {stats.sentences}
               </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                Sentences
+              </div>
+            </div>
+            <div className="border soft-grid-border rounded-md p-4 text-center">
+              <div className="text-2xl font-bold text-foreground">
+                {stats.paragraphs}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                Paragraphs
+              </div>
+            </div>
+            <div className="border soft-grid-border rounded-md p-4 text-center">
+              <div className="text-2xl font-bold text-foreground">
+                {stats.readingTime}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                Reading Time
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
       <DiagonalDivider label="SEC 02" />
 
       <Section annotation="SEC 02 · ACTIONS">
-            <h2 className="text-lg font-semibold text-foreground mb-4">
-              Additional Features
-            </h2>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-foreground">Clear all text</span>
-                <button
-                  onClick={handleClearText}
-                  className="px-4 py-2 text-sm border soft-grid-border rounded-md text-foreground hover:bg-muted transition-colors"
-                >
-                  Clear
-                </button>
-              </div>
+        <h2 className="text-lg font-semibold text-foreground mb-4">
+          Additional Features
+        </h2>
+        <div className="space-y-4">
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-foreground">Clear all text</span>
+            <button
+              onClick={handleClearText}
+              className="px-4 py-2 text-sm border soft-grid-border rounded-md text-foreground hover:bg-muted transition-colors"
+            >
+              Clear
+            </button>
+          </div>
 
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-foreground">Copy statistics</span>
-                <button
-                  onClick={handleCopyStats}
-                  className="px-4 py-2 text-sm border soft-grid-border rounded-md text-foreground hover:bg-muted transition-colors"
-                >
-                  Copy Stats
-                </button>
-              </div>
-            </div>
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-foreground">Copy statistics</span>
+            <button
+              onClick={handleCopyStats}
+              className="px-4 py-2 text-sm border soft-grid-border rounded-md text-foreground hover:bg-muted transition-colors"
+            >
+              Copy Stats
+            </button>
+          </div>
+        </div>
       </Section>
 
       <DiagonalDivider label="SEC 03" />
 
       <Section annotation="SEC 03 · ANALYSIS">
-            <h2 className="text-lg font-semibold text-foreground mb-4">
-              Word Frequency
-            </h2>
-            {stats.wordFrequency.length === 0 ? (
-              <div className="text-sm text-muted-foreground text-center py-8">
-                Enter some text to see word frequency analysis
-              </div>
-            ) : (
-              <div className="space-y-3">
-                <div className="text-sm text-muted-foreground mb-4">
-                  Top {stats.wordFrequency.length} most frequent words:
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {stats.wordFrequency.map(([word, count], index) => (
-                    <div
-                      key={word}
-                      className="flex justify-between items-center p-3 border soft-grid-border rounded-md bg-background"
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs text-muted-foreground w-6 text-center">
-                          {index + 1}
-                        </span>
-                        <span className="text-sm font-mono text-foreground">
-                          {word}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-bold text-foreground">
-                          {count}
-                        </span>
-                        <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-foreground rounded-full"
-                            style={{
-                              width: `${(count / stats.wordFrequency[0][1]) * 100}%`,
-                            }}
-                          />
-                        </div>
-                      </div>
+        <h2 className="text-lg font-semibold text-foreground mb-4">
+          Word Frequency
+        </h2>
+        {stats.wordFrequency.length === 0 ? (
+          <div className="text-sm text-muted-foreground text-center py-8">
+            Enter some text to see word frequency analysis
+          </div>
+        ) : (
+          <div className="space-y-3">
+            <div className="text-sm text-muted-foreground mb-4">
+              Top {stats.wordFrequency.length} most frequent words:
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {stats.wordFrequency.map(([word, count], index) => (
+                <div
+                  key={word}
+                  className="flex justify-between items-center p-3 border soft-grid-border rounded-md bg-background"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs text-muted-foreground w-6 text-center">
+                      {index + 1}
+                    </span>
+                    <span className="text-sm font-mono text-foreground">
+                      {word}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-bold text-foreground">
+                      {count}
+                    </span>
+                    <div className="w-16 h-2 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-foreground rounded-full"
+                        style={{
+                          width: `${(count / stats.wordFrequency[0][1]) * 100}%`,
+                        }}
+                      />
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              ))}
+            </div>
+          </div>
+        )}
       </Section>
       <TitleBlock sheet="SHT 02.1 · CHAR COUNT" />
     </PageShell>

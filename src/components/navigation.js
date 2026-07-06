@@ -18,23 +18,39 @@ export default function Navigation({ currentPage, showAdminLink = false }) {
 
   return (
     <nav className="border-b soft-grid-border">
-      <div className="max-w-4xl border-x soft-grid-border mx-auto flex items-center justify-between px-8 py-5">
-        <div className="flex items-center gap-6">
-          {navLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.href}
-              className={`text-sm transition-all duration-300 hover:text-accent hover:-translate-y-px ${
-                link.isActive ? 'text-accent font-semibold' : 'text-foreground'
-              }`}
-            >
-              {link.text}
-            </Link>
-          ))}
+      <div className="max-w-4xl border-x soft-grid-border mx-auto flex items-stretch justify-between">
+        {/* Identity cell */}
+        <div className="px-6 sm:px-8 py-3 border-r soft-grid-border flex items-center">
+          <span className="text-xs text-foreground/90">shanu.dev</span>
         </div>
 
-        <div className="flex items-center">
-          <ThemeToggle />
+        {/* Nav cells — each destination reads as a labelled sheet cell */}
+        <div className="flex items-stretch">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={link.isActive ? 'page' : undefined}
+              className={`group px-4 sm:px-5 py-3 border-l soft-grid-border flex items-center transition-colors duration-300 ${
+                link.isActive ? 'bg-accent/6' : 'hover:bg-foreground/3'
+              }`}
+            >
+              <span
+                className={`text-xs tracking-wide transition-colors ${
+                  link.isActive
+                    ? 'text-accent font-medium'
+                    : 'text-foreground/90 group-hover:text-accent'
+                }`}
+              >
+                {link.text}
+              </span>
+            </Link>
+          ))}
+
+          {/* Theme toggle rides in its own cell, keeping the grid rhythm */}
+          <div className="border-l soft-grid-border flex items-stretch">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>

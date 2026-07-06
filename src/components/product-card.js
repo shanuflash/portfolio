@@ -25,9 +25,7 @@ export default function ProductCard({ product }) {
   const cardContent = (
     <div
       className={`flex items-center justify-between px-4 py-5 transition-colors relative ${
-        isWIP
-          ? 'opacity-40 cursor-not-allowed'
-          : 'hover:bg-muted/50'
+        isWIP ? 'opacity-40 cursor-not-allowed' : 'hover:bg-muted/50'
       } ${gridPosition}`}
     >
       <div className="flex items-center gap-3">

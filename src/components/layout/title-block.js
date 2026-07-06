@@ -5,7 +5,10 @@ const cellBorders = [
   '',
 ];
 
-export default function TitleBlock({ sheet = 'SHT 01 · HOME', rev = '2026.07' }) {
+export default function TitleBlock({
+  sheet = 'SHT 01 · HOME',
+  rev = '2026.07',
+}) {
   const cells = [
     { label: 'Project', value: 'shanu.dev' },
     { label: 'Drawn by', value: 'Shanu Sivakumar' },

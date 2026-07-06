@@ -5,24 +5,30 @@ import {
   TitleBlock,
   ContactSection,
 } from '@/components/layout';
-import ProjectFigure, { ProjectFigureCompact } from '@/components/project-figure';
+import ProjectFigure, {
+  ProjectFigureCompact,
+} from '@/components/project-figure';
 import StaggerReveal from '@/components/stagger-reveal';
-import { infoItems, projects, featuredSkills, experience, education } from '@/data/portfolio';
+import {
+  infoItems,
+  projects,
+  featuredSkills,
+  experience,
+  education,
+} from '@/data/portfolio';
 import NextLevelPromo from '@/components/nextlevel-promo';
 import Image from 'next/image';
 
 function renderBold(text) {
-  return text
-    .split('**')
-    .map((part, i) =>
-      i % 2 === 1 ? (
-        <strong key={i} className="font-medium text-foreground/55">
-          {part}
-        </strong>
-      ) : (
-        part
-      )
-    );
+  return text.split('**').map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-medium text-foreground/55">
+        {part}
+      </strong>
+    ) : (
+      part
+    )
+  );
 }
 import { getIcon } from '@/components/icon-mapper';
 
@@ -44,10 +50,30 @@ export default function Home() {
             </p>
           </div>
           <div className="relative shrink-0 rotate-[5deg] border-2 border-dashed soft-grid-border p-2.5 mr-1 sm:mr-4">
-            <span className="crosshair-glyph absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2" aria-hidden="true">+</span>
-            <span className="crosshair-glyph absolute top-0 right-0 translate-x-1/2 -translate-y-1/2" aria-hidden="true">+</span>
-            <span className="crosshair-glyph absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2" aria-hidden="true">+</span>
-            <span className="crosshair-glyph absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2" aria-hidden="true">+</span>
+            <span
+              className="crosshair-glyph absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2"
+              aria-hidden="true"
+            >
+              +
+            </span>
+            <span
+              className="crosshair-glyph absolute top-0 right-0 translate-x-1/2 -translate-y-1/2"
+              aria-hidden="true"
+            >
+              +
+            </span>
+            <span
+              className="crosshair-glyph absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2"
+              aria-hidden="true"
+            >
+              +
+            </span>
+            <span
+              className="crosshair-glyph absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2"
+              aria-hidden="true"
+            >
+              +
+            </span>
             <div className="w-16 h-16 sm:w-[104px] sm:h-[104px] rounded-full bg-foreground flex items-center justify-center overflow-hidden profile-glow">
               <Image
                 width={96}
@@ -68,7 +94,9 @@ export default function Home() {
             {getIcon('Briefcase', 'w-3.5 h-3.5 text-muted-foreground')}
           </div>
           <span className="text-xs text-muted-foreground">
-            Shipping enterprise SaaS @ <span className="text-accent/75 font-medium">SurveySparrow</span> since 2023
+            Shipping enterprise SaaS @{' '}
+            <span className="text-accent/75 font-medium">SurveySparrow</span>{' '}
+            since 2023
           </span>
         </div>
         <div className="px-6 sm:px-8 pb-4 grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-x-5 gap-y-2.5">
@@ -99,26 +127,79 @@ export default function Home() {
         <div className="space-y-5 text-sm text-foreground leading-relaxed">
           <p>
             I&apos;m a Full Stack Engineer who builds enterprise SaaS for a
-            living: React UIs that stay fast no matter how much data you
-            throw at them, and billing pipelines that move real money
-            without dropping a cent. If it&apos;s complex under the hood
-            but simple on the surface, I&apos;m into it.
+            living: React UIs that stay fast no matter how much data you throw
+            at them, and billing pipelines that move real money without dropping
+            a cent. If it&apos;s complex under the hood but simple on the
+            surface, I&apos;m into it.
           </p>
           <p>
             Outside work, I build side projects like game trackers, npm
-            packages, and desktop apps, either to solve a problem
-            I&apos;m facing or because the idea wouldn&apos;t leave me
-            alone.
+            packages, and desktop apps, either to solve a problem I&apos;m
+            facing or because the idea wouldn&apos;t leave me alone.
           </p>
           <div className="space-y-5">
             {[
-              { label: 'Languages', items: ['TypeScript', 'JavaScript', 'C#', 'HTML', 'CSS', 'Sass'] },
-              { label: 'Frameworks & Libraries', items: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind CSS', 'TanStack Query', 'Drizzle ORM', 'Redux Toolkit', 'Radix UI', 'Better Auth', 'Zustand', 'Ably'] },
-              { label: 'Tools', items: ['Claude Code', 'Git', 'Figma', 'Vercel', 'Jira', 'Docker', 'pnpm', 'Vite', 'Biome'] },
-              { label: 'Databases & Services', items: ['PostgreSQL', 'Redis', 'AWS S3', 'SQLite', 'Stripe', 'Turso', 'Cloudinary', 'Supabase', 'MongoDB'] },
+              {
+                label: 'Languages',
+                items: [
+                  'TypeScript',
+                  'JavaScript',
+                  'C#',
+                  'HTML',
+                  'CSS',
+                  'Sass',
+                ],
+              },
+              {
+                label: 'Frameworks & Libraries',
+                items: [
+                  'React',
+                  'Next.js',
+                  'Node.js',
+                  'Express',
+                  'Tailwind CSS',
+                  'TanStack Query',
+                  'Drizzle ORM',
+                  'Redux Toolkit',
+                  'Radix UI',
+                  'Better Auth',
+                  'Zustand',
+                  'Ably',
+                ],
+              },
+              {
+                label: 'Tools',
+                items: [
+                  'Claude Code',
+                  'Git',
+                  'Figma',
+                  'Vercel',
+                  'Jira',
+                  'Docker',
+                  'pnpm',
+                  'Vite',
+                  'Biome',
+                ],
+              },
+              {
+                label: 'Databases & Services',
+                items: [
+                  'PostgreSQL',
+                  'Redis',
+                  'AWS S3',
+                  'SQLite',
+                  'Stripe',
+                  'Turso',
+                  'Cloudinary',
+                  'Supabase',
+                  'MongoDB',
+                ],
+              },
             ].map((group) => (
               <div key={group.label}>
-                <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{group.label}</h3>
+                <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                  {group.label}
+                </h3>
                 <div className="flex flex-wrap gap-1.5">
                   {group.items.map((skill) => {
                     const isFeatured = featuredSkills.includes(skill);
@@ -132,7 +213,12 @@ export default function Home() {
                         }`}
                       >
                         {skill}
-                        <span className="absolute inset-0 flex items-center justify-center accent-gradient-text opacity-0 group-hover/key:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true">{skill}</span>
+                        <span
+                          className="absolute inset-0 flex items-center justify-center accent-gradient-text opacity-0 group-hover/key:opacity-100 transition-opacity duration-300 pointer-events-none"
+                          aria-hidden="true"
+                        >
+                          {skill}
+                        </span>
                       </span>
                     );
                   })}
@@ -146,30 +232,36 @@ export default function Home() {
       <Section id="projects" annotation="SEC 03 · PROJECTS">
         <h2 className="text-xl font-bold text-foreground mb-6">Projects</h2>
         <div className="space-y-6">
-          {projects.filter((p) => p.size === 'large').map((project, i) => (
-            <StaggerReveal key={project.name} index={i}>
-              <ProjectFigure project={project} wide />
-            </StaggerReveal>
-          ))}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {projects.filter((p) => p.size === 'medium').map((project, i) => (
+          {projects
+            .filter((p) => p.size === 'large')
+            .map((project, i) => (
               <StaggerReveal key={project.name} index={i}>
-                <ProjectFigure project={project} />
+                <ProjectFigure project={project} wide />
               </StaggerReveal>
             ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {projects
+              .filter((p) => p.size === 'medium')
+              .map((project, i) => (
+                <StaggerReveal key={project.name} index={i}>
+                  <ProjectFigure project={project} />
+                </StaggerReveal>
+              ))}
           </div>
           <div className="border soft-grid-border rounded-lg overflow-hidden">
             <div className="grid grid-cols-1 sm:grid-cols-3">
-              {projects.filter((p) => p.size === 'small').map((project, i, arr) => (
-                <div
-                  key={project.name}
-                  className={`soft-grid-border ${i < arr.length - 1 ? 'border-b sm:border-b-0 sm:border-r' : ''}`}
-                >
-                  <StaggerReveal index={i}>
-                    <ProjectFigureCompact project={project} />
-                  </StaggerReveal>
-                </div>
-              ))}
+              {projects
+                .filter((p) => p.size === 'small')
+                .map((project, i, arr) => (
+                  <div
+                    key={project.name}
+                    className={`soft-grid-border ${i < arr.length - 1 ? 'border-b sm:border-b-0 sm:border-r' : ''}`}
+                  >
+                    <StaggerReveal index={i}>
+                      <ProjectFigureCompact project={project} />
+                    </StaggerReveal>
+                  </div>
+                ))}
             </div>
           </div>
           <div className="text-right">
@@ -195,7 +287,8 @@ export default function Home() {
             <div key={job.company}>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="text-sm font-bold text-foreground">
-                  {job.role} <span className="text-muted-foreground font-normal">@</span>{' '}
+                  {job.role}{' '}
+                  <span className="text-muted-foreground font-normal">@</span>{' '}
                   <span className="text-accent/90">{job.company}</span>
                 </h3>
                 <div className="text-xs text-muted-foreground tabular-nums">
@@ -204,8 +297,14 @@ export default function Home() {
               </div>
               <ul className="mt-4 space-y-2.5">
                 {job.bullets.map((bullet, i) => (
-                  <li key={i} className="flex gap-2.5 text-xs text-muted-foreground font-light leading-relaxed">
-                    <span className="text-accent/60 shrink-0 select-none" aria-hidden="true">
+                  <li
+                    key={i}
+                    className="flex gap-2.5 text-xs text-muted-foreground font-light leading-relaxed"
+                  >
+                    <span
+                      className="text-accent/60 shrink-0 select-none"
+                      aria-hidden="true"
+                    >
                       ▸
                     </span>
                     <span>{renderBold(bullet)}</span>

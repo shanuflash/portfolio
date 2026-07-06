@@ -241,7 +241,9 @@ const Tools = () => {
           <ToolGrid tools={activeTools} />
         </div>
 
-        <h3 className="text-sm font-semibold text-muted-foreground mt-8 mb-3">Coming Soon</h3>
+        <h3 className="text-sm font-semibold text-muted-foreground mt-8 mb-3">
+          Coming Soon
+        </h3>
         <div className="border soft-grid-border rounded-lg overflow-hidden">
           <ToolGrid tools={wipTools} isWipSection />
         </div>
@@ -254,8 +256,9 @@ const Tools = () => {
         title="Have a tool idea?"
         blurb={
           <>
-            These tools are based on things I frequently search for online.
-            If you think we should add something new, feel free to open a PR/Issue on the{' '}
+            These tools are based on things I frequently search for online. If
+            you think we should add something new, feel free to open a PR/Issue
+            on the{' '}
             <a
               href="https://github.com/shanuflash/portfolio"
               className="text-accent hover:underline"

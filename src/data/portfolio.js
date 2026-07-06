@@ -4,7 +4,8 @@ export const projects = [
     sourceUrl: 'https://github.com/shanuflash/nextlevel',
     icon: 'Gamepad2',
     name: 'NextLevel',
-    description: 'Track every game you\'ve played, dropped, or dreamed of finishing, with live IGDB metadata, shareable profiles, and OG images generated at the edge.',
+    description:
+      "Track every game you've played, dropped, or dreamed of finishing, with live IGDB metadata, shareable profiles, and OG images generated at the edge.",
     image: '/projects/nextlevel.webp',
     stack: ['Next.js', 'TypeScript', 'Turso', 'Drizzle ORM', 'Better Auth'],
     size: 'large',
@@ -14,7 +15,8 @@ export const projects = [
     sourceUrl: 'https://github.com/shanuflash/invoicezz',
     icon: 'FileText',
     name: 'InvoicEzz',
-    description: 'Print-ready invoices that deduct stock in real time. Every sale syncs inventory.',
+    description:
+      'Print-ready invoices that deduct stock in real time. Every sale syncs inventory.',
     image: '/projects/invoicezz.webp',
     stack: ['Next.js', 'Redux Toolkit', 'Supabase', 'Tailwind CSS'],
     size: 'medium',
@@ -24,7 +26,8 @@ export const projects = [
     sourceUrl: 'https://github.com/shanuflash/whispr',
     icon: 'MessageSquare',
     name: 'Whispr',
-    description: 'Drop-in chat rooms with presence and iMessage-style grouping. Token-scoped anonymous auth, zero backend.',
+    description:
+      'Drop-in chat rooms with presence and iMessage-style grouping. Token-scoped anonymous auth, zero backend.',
     image: '/projects/whispr.webp',
     stack: ['Next.js', 'TypeScript', 'Ably Chat', 'Zod'],
     size: 'medium',
@@ -34,7 +37,8 @@ export const projects = [
     sourceUrl: 'https://github.com/shanuflash/react-attachment-kit',
     icon: 'Paperclip',
     name: 'React Attachment Kit',
-    description: 'npm package for rich file previews: images, videos, PDFs, and docs with zoom, pan, and custom controls.',
+    description:
+      'npm package for rich file previews: images, videos, PDFs, and docs with zoom, pan, and custom controls.',
     stack: ['React', 'npm'],
     size: 'small',
   },
@@ -42,7 +46,8 @@ export const projects = [
     sourceUrl: 'https://github.com/shanuflash/freeram',
     icon: 'MemoryStick',
     name: 'FreeRam',
-    description: 'C#/WPF tray app that silently trims background processes and reclaims RAM without rebooting.',
+    description:
+      'C#/WPF tray app that silently trims background processes and reclaims RAM without rebooting.',
     stack: ['C#', 'WPF'],
     size: 'small',
   },
@@ -51,7 +56,8 @@ export const projects = [
     sourceUrl: 'https://github.com/shanuflash/laddr',
     icon: 'Trophy',
     name: 'Laddr',
-    description: 'Drag-and-drop tournament brackets on an infinite canvas, built with @xyflow/react.',
+    description:
+      'Drag-and-drop tournament brackets on an infinite canvas, built with @xyflow/react.',
     isWIP: true,
     stack: ['React', '@xyflow/react'],
     size: 'small',
@@ -151,11 +157,7 @@ export const infoItems = [
   {
     id: 'email',
     icon: 'Mail',
-    content: (
-      <a href="mailto:hello@shanu.dev">
-        hello@shanu.dev
-      </a>
-    ),
+    content: <a href="mailto:hello@shanu.dev">hello@shanu.dev</a>,
   },
   {
     id: 'linkedin',

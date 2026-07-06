@@ -2,7 +2,11 @@ import Image from 'next/image';
 import { Section } from './layout';
 import { nextLevel } from '@/data/portfolio';
 
-const coverTilts = ['-rotate-6 translate-y-1', 'rotate-0 -translate-y-1', 'rotate-6 translate-y-1'];
+const coverTilts = [
+  '-rotate-6 translate-y-1',
+  'rotate-0 -translate-y-1',
+  'rotate-6 translate-y-1',
+];
 
 async function getNowPlaying() {
   try {
@@ -38,9 +42,7 @@ export default async function NextLevelPromo() {
         />
         <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-8">
           <div className="min-w-0">
-            <span className="text-lg font-bold tracking-tight">
-              NextLevel
-            </span>
+            <span className="text-lg font-bold tracking-tight">NextLevel</span>
             <p className="text-sm text-muted-foreground dark:text-white/50 mt-2 max-w-md leading-relaxed">
               Track every game you&apos;ve played, dropped, or dreamed of
               finishing.

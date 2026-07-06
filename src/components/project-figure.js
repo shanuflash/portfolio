@@ -88,7 +88,11 @@ export default function ProjectFigure({ project, wide = false }) {
           fill
           unoptimized
           className={`object-cover ${positionMap[imagePosition] || 'object-top'} transition-transform duration-500 ease-out group-hover:scale-[1.03]`}
-          sizes={wide ? '(max-width: 672px) 100vw, 832px' : '(max-width: 672px) 100vw, 416px'}
+          sizes={
+            wide
+              ? '(max-width: 672px) 100vw, 832px'
+              : '(max-width: 672px) 100vw, 416px'
+          }
         />
       </div>
       <figcaption className="border-t soft-grid-border px-4 py-3 sm:px-5 flex-1">

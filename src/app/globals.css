@@ -63,8 +63,8 @@ img::-webkit-selection {
 
 :root {
   --radius: 0.625rem;
-  --mesh-intensity: 35%;
-  --mesh-intensity-half: 17.5%;
+  --mesh-intensity: 20%;
+  --mesh-intensity-half: 10%;
   --background: oklch(0.97 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -150,8 +150,21 @@ img::-webkit-selection {
   body {
     @apply text-foreground bg-background;
     background-image:
-      radial-gradient(ellipse 120% 40% at 50% -10%, color-mix(in oklch, var(--accent) var(--mesh-intensity), transparent) 0%, transparent 70%),
-      radial-gradient(ellipse 120% 35% at 50% 100%, color-mix(in oklch, var(--accent) var(--mesh-intensity-half), transparent) 0%, transparent 70%);
+      radial-gradient(
+        ellipse 120% 40% at 50% -10%,
+        color-mix(in oklch, var(--accent) var(--mesh-intensity), transparent) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 120% 35% at 50% 100%,
+        color-mix(
+            in oklch,
+            var(--accent) var(--mesh-intensity-half),
+            transparent
+          )
+          0%,
+        transparent 70%
+      );
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
   }
@@ -171,7 +184,7 @@ img::-webkit-selection {
   }
 
   .soft-grid-border {
-    border-color: oklch(0.91 0.005 286);
+    border-color: oklch(0.86 0.006 286);
   }
 
   .dark .soft-grid-border {
@@ -283,8 +296,12 @@ img::-webkit-selection {
 }
 
 @keyframes accent-shift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

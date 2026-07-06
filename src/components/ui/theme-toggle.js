@@ -48,52 +48,51 @@ export default function ThemeToggle() {
       });
     }).ready;
 
-    const { top, left, width, height } =
-      buttonRef.current.getBoundingClientRect();
-    const y = top + height / 2;
-    const x = left + width / 2;
-
-    const right = window.innerWidth - left;
-    const bottom = window.innerHeight - top;
-    const maxRad = Math.hypot(Math.max(left, right), Math.max(top, bottom));
-
+    // Straight wipe: the new theme is revealed behind a hard horizontal edge
+    // sweeping top → down the sheet. Rectilinear, matching the grid.
     document.documentElement.animate(
       {
-        clipPath: [
-          `circle(0px at ${x}px ${y}px)`,
-          `circle(${maxRad}px at ${x}px ${y}px)`,
-        ],
+        clipPath: ['inset(0 0 100% 0)', 'inset(0 0 0 0)'],
       },
       {
-        duration: 700,
-        easing: 'ease-in-out',
+        duration: 600,
+        easing: 'cubic-bezier(0.65, 0, 0.35, 1)',
         pseudoElement: '::view-transition-new(root)',
       }
     );
   };
 
   if (!mounted) {
-    return <div className="p-2 w-9 h-9 rounded-md" />;
+    return <div className="w-11" />;
   }
 
   return (
     <button
       ref={buttonRef}
       onClick={toggleTheme}
-      className="p-2 rounded-md hover:bg-accent/10 hover:text-accent transition-all duration-100 focus:outline-none transform hover:rotate-12"
+      className="group/theme flex h-full w-11 items-center justify-center transition-colors duration-300 hover:bg-foreground/3 focus:outline-none"
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
     >
-      {isDark ? (
+      <span className="relative h-4 w-4">
         <Sun
-          className="w-5 h-5 text-foreground transition-transform duration-300"
+          className={`absolute inset-0 h-4 w-4 text-foreground/90 transition-all duration-300 ease-out group-hover/theme:text-accent ${
+            isDark
+              ? 'rotate-0 scale-100 opacity-100'
+              : '-rotate-90 scale-50 opacity-0'
+          }`}
           strokeWidth={2}
+          aria-hidden={!isDark}
         />
-      ) : (
         <Moon
-          className="w-5 h-5 text-foreground transition-transform duration-300"
+          className={`absolute inset-0 h-4 w-4 text-foreground/90 transition-all duration-300 ease-out group-hover/theme:text-accent ${
+            isDark
+              ? 'rotate-90 scale-50 opacity-0'
+              : 'rotate-0 scale-100 opacity-100'
+          }`}
           strokeWidth={2}
+          aria-hidden={isDark}
         />
-      )}
+      </span>
     </button>
   );
 }
