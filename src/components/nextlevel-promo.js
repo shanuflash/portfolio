@@ -87,7 +87,7 @@ export default async function NextLevelPromo() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs text-muted-foreground border border-foreground/15 dark:text-white/60 dark:border-white/15 rounded-md hover:text-foreground hover:border-foreground/30 dark:hover:text-white dark:hover:border-white/30 transition-colors"
               >
-                nextlevel.shanu.dev
+                Try now!
               </a>
             </div>
           </div>
